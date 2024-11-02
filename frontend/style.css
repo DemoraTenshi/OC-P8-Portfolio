@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+    --orange: #D75619;
+    --black: #000;
+    --white: #fff;
+    --light-bg: #f5dbb9;
+    --dark-bg: #020814;
+    --dark-text: #fff;
+    --header-bg: #333;
+    --border-bold: .4rem solid var(--black);
+    --border-light: .2rem solid var(--black);
+    --button-color: #31312f;
+    --light-gradient: linear-gradient(135deg, rgba(211, 198, 245, 0.5) 0%, rgba(255, 191, 203, 0.5) 50%, rgba(190, 153, 199, 0.5) 100%);
+    --dark-gradient: linear-gradient(225deg, rgba(26, 36, 73, 1) 0%, rgba(53, 70, 90, 1) 50%, rgba(50, 68, 81, 1) 100%);
+}
+
+* {
+    font-family: 'VT323', monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: var(--black);
+}
+
+*::selection {
+    background-color: var(--black);
+    color: var(--orange);
+}
+
+*::-webkit-scrollbar {
+    height: .5rem;
+    width: 1rem;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--orange);
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--black);
+    overflow: hidden;
+    transition: .2s linear !important;
+}
+
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+.header {
+    background: var(--light-gradient);
+    width: 100vw;
+    padding: 3rem 4rem 3rem 3rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: .2s linear !important;
+}
+
+.header .logo {
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 4.5rem;
+}
+
+.header .navbar {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    gap: 2em;
+    padding: 0 2rem;
+}
+
+.nav-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    padding: 1.5rem 3rem;
+    min-width: 140px;
+    border-radius: 1em;
+    background-color: darkgrey;
+    color: var(--black);
+    transition: background-color 0.3s ease;
+}
+
+.nav-link .icon {
+    position: absolute;
+    left: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4rem;
+    height: 4rem;
+    opacity: 0;
+    /* Opacité par défaut */
+    transition: opacity 0.3s ease;
+}
+/* Rendre l'icône visible lorsque le lien est actif */
+.nav-link.active .icon {
+    opacity: 1;
+    /* Icône visible quand le lien est actif */
+}
+.nav-link:hover {
+    background-color: var(--orange);
+}
+
+.nav-link.active {
+    background-color: var(--orange);
+}
+
+.nav-link:hover .icon,
+.nav-link:focus .icon {
+    opacity: 1;
+    /* Icône visible au survol ou mise au point */
+}
+
+main {
+    padding-top: 10rem;
+    padding: 2rem;
+}
+
+section {
+    text-align: center;
+    padding-top: 2rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+    padding-bottom: 1.5rem;
+}
+
+p {
+    font-size: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+footer {
+    background: var(--light-gradient);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+}
+
+footer .follow {
+    font-size: 5rem;
+    padding: 2rem;
+}
+
+footer .credits a {
+    font-size: 1.5rem;
+}
+
+/* Styles pour la section random-facts */
+.random-facts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 150px;
+    margin: 2rem auto;
+    background-color: var(--light-bg);
+    color: var(--black);
+    font-size: 2rem;
+    padding: 2rem;
+    border: var(--border-light);
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Transition pour chaque fait */
+.random-facts p {
+    opacity: 0;
+    padding: 1rem;
+    transition: opacity 0.5s ease;
+}
+
+.random-facts p.active {
+    opacity: 1;
+}
+
+/* Toggle Switch for Dark Mode */
+.toggle-switch {
+    position: relative;
+    width: 120px;
+    height: 50px;
+    display: inline-block;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--button-color);
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.slider i {
+    font-size: 3rem;
+    color: var(--white);
+    transition: opacity 0.3s ease;
+}
+
+/* Positioning the icons */
+.slider .fa-sun {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.slider .fa-moon {
+    opacity: 1;
+}
+
+/* Position the slider knob */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 44px;
+    width: 44px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--white);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for dark mode activation */
+.toggle-switch input:checked+.slider {
+    background-color: #333;
+    padding: 0 1rem;
+}
+
+.toggle-switch input:checked+.slider:before {
+    transform: translateX(50px);
+}
+
+.toggle-switch input:checked+.slider .fa-sun {
+    opacity: 1;
+}
+
+.toggle-switch input:checked+.slider .fa-moon {
+    opacity: 0;
+}
+
+/* Dark Mode Styles */
+
+body.dark-mode .header{
+    background: var(--dark-gradient);
+    border-color: var(--orange);
+}
+
+body.dark-mode .nav-link {
+    background-color: #555;
+    color: var(--dark-text);
+}
+
+body.dark-mode .nav-link:hover {
+    background-color: var(--orange);
+}
+
+body.dark-mode .nav-link.active {
+    background-color: var(--orange);
+}
+
+body.dark-mode footer {
+    background: var(--dark-gradient);
+}
+/* Mode sombre pour random-facts */
+body.dark-mode .random-facts {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+    border: var(--border-bold);
+}
+
+body.dark-mode .header .logo,
+body.dark-mode footer,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode p,
+body.dark-mode a {
+    color: var(--dark-text);
+}

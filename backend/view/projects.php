@@ -4,13 +4,16 @@ $title = "Projects";
 // Inclut le contrôleur
 require_once __DIR__ . "/../controllers/ProjectController.php";
 
+$projectController = new ProjectController();
+$githubProjects = $projectController->showProjects();
+
 ob_start();
 ?>
 
 <section class="content">
     <div class="project-gallery">
 
-        <?php if (!empty($githubProjects) && is_array($githubProjects)) : ?>
+        <?php if (isset($githubProjects) && !empty($githubProjects) && is_array($githubProjects)) : ?>
             <?php foreach ($githubProjects as $project): ?>
                 <div class="project-card"
                     data-title="<?= htmlspecialchars($project['name']) ?>"
@@ -18,6 +21,7 @@ ob_start();
                     data-github="<?= htmlspecialchars($project['html_url'] ?? '#') ?>"
                     data-deployment="<?= htmlspecialchars($project['homepage'] ?? '#') ?>">
                     <h3><?= htmlspecialchars($project['name']) ?></h3>
+
                 </div>
             <?php endforeach; ?>
         <?php else : ?>

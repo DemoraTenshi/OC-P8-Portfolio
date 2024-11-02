@@ -22,17 +22,8 @@ class ProjectModel
             return [];
         }
 
-        // Debug : affichez la réponse brute pour voir ce qui est renvoyé
-        echo "<pre>Réponse API : ";
-        print_r($response);
-        echo "</pre>";
-
         $projects = json_decode($response, true);
 
-        // Debug : affichez les données décodées
-        echo "<pre>Données décodées : ";
-        print_r($projects);
-        echo "</pre>";
 
         if (!empty($projects) && is_array($projects)) {
             return $projects; // Retourne la liste des dépôts

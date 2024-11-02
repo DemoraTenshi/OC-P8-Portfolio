@@ -16,9 +16,7 @@ class ProjectController
     {
         $githubProjects = $this->projectModel->getGithubProjects(); // Récupération des projets GitHub
 
-        // Vérifiez les données récupérées
-        echo "<pre>";
-        print_r($githubProjects); // Pour le débogage
-        echo "</pre>";
+
+        return $githubProjects;
     }
 }

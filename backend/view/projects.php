@@ -1,6 +1,9 @@
 <?php
 $title = "Projects";
 
+// Inclut le contrôleur
+require_once __DIR__ . "/../controllers/ProjectController.php";
+
 ob_start();
 ?>
 

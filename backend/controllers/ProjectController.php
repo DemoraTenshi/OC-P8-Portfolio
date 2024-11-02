@@ -20,8 +20,5 @@ class ProjectController
         echo "<pre>";
         print_r($githubProjects); // Pour le débogage
         echo "</pre>";
-
-        // Appeler la vue
-        include '../view/projects.php';
     }
 }

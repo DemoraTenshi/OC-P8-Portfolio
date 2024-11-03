@@ -56,12 +56,10 @@ body {
     color: var(--black);
     overflow: hidden;
     transition: .2s linear !important;
+    
 }
 
-body.dark-mode {
-    background-color: var(--dark-bg);
-    color: var(--dark-text);
-}
+
 
 .header {
     background: var(--light-gradient);
@@ -133,6 +131,7 @@ body.dark-mode {
 }
 
 main {
+    min-height: 100vh;
     padding-top: 10rem;
     padding: 2rem;
 }
@@ -151,6 +150,92 @@ p {
     font-size: 2rem;
     max-width: 900px;
     margin: 0 auto;
+}
+
+.project-gallery{
+    display: flex;
+    justify-content: center;
+}
+
+.project-card {
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    writing-mode: vertical-rl; /* Affiche le texte verticalement de gauche à droite */
+    text-align: center; /* Centre le texte horizontalement */
+    padding: 20px; /* Ajoute un peu de padding pour l'espace */
+    background-color: #f0f0f0; /* Couleur de fond pour les cartes de projet */
+    margin: 10px; /* Marge entre les cartes */
+    box-shadow: 2px 5px 10px 3px rgba(0, 0, 0, .2); /* Ombre pour les cartes */
+    display: flex; /* Utilise Flexbox pour centrer le contenu */
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center; /* Centre le contenu verticalement */
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+    transition: transform 300ms ease;
+    box-shadow: 4px 8px 15px 5px rgba(0, 0, 0, .3);/* Ombre plus prononcée au survol */
+}
+
+.project-card h1 {
+    font-size: 2rem; /* Taille de la police pour le titre */
+    margin-bottom: 10px; /* Marge en bas du titre */
+}
+
+.project-card button {
+    margin-top: 20px; /* Marge en haut du bouton */
+    padding: 10px 20px; /* Padding pour le bouton */
+    font-size: 1.2rem; /* Taille de la police pour le bouton */
+    background-color: #007BFF; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte du bouton */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur de pointeur */
+    transition: background-color 0.3s ease; /* Transition de la couleur de fond */
+}
+
+.project-card button:hover {
+    background-color: #0056b3; /* Couleur de fond au survol */
+}
+/* Styles pour la modale */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px; /* Limite la largeur maximale */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour plus de profondeur */
+    border-radius: 10px; /* Ajoute des coins arrondis */
+}
+
+.close {
+    color: #000000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 footer {
@@ -274,6 +359,11 @@ footer .credits a {
 
 /* Dark Mode Styles */
 
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
 body.dark-mode .header{
     background: var(--dark-gradient);
     border-color: var(--orange);
@@ -303,6 +393,7 @@ body.dark-mode .random-facts {
 }
 
 body.dark-mode .header .logo,
+body.dark-mode .modal-content,
 body.dark-mode footer,
 body.dark-mode h1,
 body.dark-mode h2,

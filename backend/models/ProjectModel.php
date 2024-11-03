@@ -24,12 +24,34 @@ class ProjectModel
 
         $projects = json_decode($response, true);
 
-
         if (!empty($projects) && is_array($projects)) {
+            // Ajouter les screenshots aux projets
+            foreach ($projects as &$project) {
+                if (isset($project['homepage'])) {
+                    $project['screenshot'] = $this->getScreenshot($project['homepage']);
+                }
+            }
             return $projects; // Retourne la liste des dépôts
         } else {
             echo "Aucun projet trouvé dans l'API GitHub ou problème de format.";
             return [];
         }
+    }
+
+    // Méthode pour récupérer le screenshot d'une page de déploiement
+    public function getScreenshot($url)
+    {
+        $apiKey = '9c6c537132826cd715fbbcecc2cd3974'; // Remplacez par votre clé API Screenshotlayer
+        $apiUrl = 'https://api.screenshotlayer.com/api/capture?access_key=' . $apiKey . '&url=' . urlencode($url) . '&fullpage=1';
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $apiUrl);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_USERAGENT, 'Your-App-Name'); // Nécessaire pour l'API GitHub
+
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        return $response;
     }
 }

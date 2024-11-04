@@ -9,8 +9,8 @@ class Fact
 
     public function __construct()
     {
-        $database = new Database();
-        $this->conn = $database->getConnection();
+        // Obtenez la connexion de la base de données
+        $this->conn = Database::getInstance()->getConnection();
     }
 
     // Récupère un fait aléatoire

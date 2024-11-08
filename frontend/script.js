@@ -92,18 +92,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // JavaScript pour gérer l'ouverture de la modale (uniquement pour la page projets)
     if (currentPage === 'projects') {
-        // Sélectionnez tous les boutons d'ouverture de la modale
+        // Sélection de tous les boutons d'ouverture de la modale
         const openModalButtons = document.querySelectorAll('.open-modal-btn');
-        const modal = document.getElementById('projectModal');
-        const closeModalButton = document.querySelector('.close');
+        const modal = document.querySelector('.modal');  // Sélectionne la modale
+        const closeModalButtons = modal.querySelectorAll('.delete, .modal-close'); // Boutons de fermeture
         const modalTitle = document.getElementById('modal-title');
         const modalDescription = document.getElementById('modal-description');
         const modalGithub = document.getElementById('modal-github');
         const modalDeployment = document.getElementById('modal-deployment');
         const modalScreenshot = document.getElementById('modal-screenshot');
 
-        if (openModalButtons.length > 0 && modal && closeModalButton && modalTitle && modalDescription && modalGithub && modalDeployment && modalScreenshot) {
-            // Ajoutez un écouteur d'événements pour ouvrir la modale
+        if (openModalButtons.length > 0 && modal) {
+            // Ajout d'écouteurs d'événements pour ouvrir la modale
             openModalButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const projectCard = button.parentElement;
@@ -113,6 +113,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     const deploymentUrl = projectCard.getAttribute('data-deployment');
                     const screenshot = projectCard.getAttribute('data-screenshot');
 
+                    // Mise à jour du contenu de la modale
                     modalTitle.textContent = title;
                     modalDescription.textContent = description;
                     modalGithub.href = githubUrl;
@@ -125,19 +126,22 @@ document.addEventListener("DOMContentLoaded", function() {
                         modalScreenshot.style.display = 'none';
                     }
 
-                    modal.style.display = 'block';
+                    // Affiche la modale en ajoutant la classe 'is-active'
+                    modal.classList.add('is-active');
                 });
             });
 
-            // Ajoutez un écouteur d'événements pour fermer la modale
-            closeModalButton.addEventListener('click', () => {
-                modal.style.display = 'none';
+            // Ajout d'écouteurs d'événements pour fermer la modale
+            closeModalButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    modal.classList.remove('is-active');
+                });
             });
 
-            // Ajoutez un écouteur d'événements pour fermer la modale en cliquant en dehors de celle-ci
-            window.addEventListener('click', (event) => {
-                if (event.target === modal) {
-                    modal.style.display = 'none';
+            // Ajout d'un écouteur pour fermer la modale en cliquant sur l'arrière-plan
+            modal.addEventListener('click', (event) => {
+                if (event.target.classList.contains('modal-background')) {
+                    modal.classList.remove('is-active');
                 }
             });
         }

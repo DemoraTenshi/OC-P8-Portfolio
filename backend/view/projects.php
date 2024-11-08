@@ -34,20 +34,28 @@ ob_start();
     </div>
 
     <!-- Modale -->
-    <div class="modal" id="projectModal" style="display: none;">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 id="modal-title"></h2>
-            <p id="modal-description"></p>
-            <a id="modal-github" href="#" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-code"></i>
-            </a>
-            <a id="modal-deployment" href="#" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-desktop"></i>
-            </a>
-            <img id="modal-screenshot" src="" alt="Screenshot" style="display: none;">
+    <div class="modal">
+        <div class="modal-background">
+            <header class="modal-card-head">
+                <p class="modal-card-head" id="modal-title"></p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <p id="modal-description"></p>
+                <a id="modal-github" href="#" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-solid fa-code"></i>
+                </a>
+                <a id="modal-deployment" href="#" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-solid fa-desktop"></i>
+                </a>
+                <img id="modal-screenshot" src="" alt="Screenshot" style="display: none;">
+            </section>
+            <footer class="modal-card-footer">
+                <button class="modal-close is-large" aria-label="close"></button>
+            </footer>
         </div>
     </div>
+
 </section>
 
 <?php

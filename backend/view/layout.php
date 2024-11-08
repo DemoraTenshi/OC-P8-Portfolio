@@ -6,29 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($title) ?></title>
 
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="frontend/node_modules/bulma/css/bulma.css">
+
     <!-- font awesome cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- Styles personnalisés -->
+    <link rel="stylesheet" href="frontend/assets/styles.css"> <!-- Remplace .scss par .css après compilation -->
 
-    <!-- custom CSS file link -->
-    <link rel="stylesheet" href="frontend/style.css">
 </head>
 
 <body>
     <header class="header">
         <a href="index.php?page=home" class="logo">Portfolio</a>
-        <nav class="navbar">
-            <a href="index.php?page=home" class="nav-link" id="home-link">
-                <img src="frontend/icons/maple-leaf.png" alt="maple leaf icon" class="icon"> Home
-            </a>
-            <a href="index.php?page=about" class="nav-link" id="about-link">
-                <img src="frontend/icons/maple-leaf.png" alt="maple leaf icon" class="icon"> About
-            </a>
-            <a href="index.php?page=projects" class="nav-link" id="projects-link">
-                <img src="frontend/icons/maple-leaf.png" alt="maple leaf icon" class="icon"> Projects
-            </a>
-            <a href="index.php?page=contact" class="nav-link" id="contact-link">
-                <img src="frontend/icons/maple-leaf.png" alt="maple leaf icon" class="icon"> Contact
-            </a>
+        <nav class="navbar-menu" role="navigation" aria-label="main navigation">
+            <div class="navbar-end">
+                <a href="index.php?page=home" class="navbar-item" id="home-link">Home</a>
+                <a href="index.php?page=about" class="navbar-item" id="about-link">About</a>
+                <a href="index.php?page=projects" class="navbar-item" id="projects-link">Project</a>
+                <a href="index.php?page=contact" class="navbar-item" id="contact-link">Contact</a>
+            </div>
         </nav>
         <!-- Toggle Switch pour le mode sombre/claire -->
         <label class="toggle-switch">
@@ -40,22 +37,27 @@
         </label>
     </header>
 
-    <main>
+    <main class="container">
         <?= $content ?> <!-- Affiche le contenu de la page ici -->
     </main>
 
-    <footer>
-        <div class="follow">
-            <a href="https://www.linkedin.com/in/cécile-pecquerie-05b58797/" class="fab fa-linkedin" target="_blank" rel="noopener noreferrer"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="https://github.com/DemoraTenshi" class="fab fa-github" target="_blank" rel="noopener noreferrer"></a>
-        </div>
-        <div class="credits">
-            <a href="https://www.flaticon.com/free-icons/maple-leaf" title="maple leaf icons">Maple leaf icons created by max.icons - Flaticon</a>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <div class="follow">
+                <a href="https://www.linkedin.com/in/cécile-pecquerie-05b58797/" class="fab fa-linkedin" target="_blank" rel="noopener noreferrer"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="https://github.com/DemoraTenshi" class="fab fa-github" target="_blank" rel="noopener noreferrer"></a>
+            </div>
+            <div class="credits">
+                <a href="https://www.flaticon.com/free-icons/maple-leaf" title="maple leaf icons">Maple leaf icons created by max.icons - Flaticon</a>
+            </div>
         </div>
     </footer>
     <!-- custom js file link -->
     <script src="frontend/script.js"></script> <!-- Ajustez le chemin si nécessaire -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Si tu utilises Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
 </body>
 
 </html>

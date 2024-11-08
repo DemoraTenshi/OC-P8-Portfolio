@@ -1,0 +1,253 @@
+@use '../../node_modules/bulma/bulma.scss' ;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=VT323&display=swap');
+
+:root {
+    --bulma-primary-h: 26deg;
+    --bulma-primary-s: 84%;
+    --bulma-primary-l: 53%;
+    --bulma-link-h: 232deg;
+    --bulma-link-s: 52%;
+    --bulma-link-l: 51%;
+    --bulma-info-h: 276deg;
+    --bulma-info-s: 42%;
+    --bulma-info-l: 67%;
+    --bulma-success-h: 159deg;
+    --bulma-success-s: 82%;
+    --bulma-success-l: 38%;
+    --bulma-warning-h: 329deg;
+    --bulma-warning-s: 49%;
+    --bulma-warning-l: 63%;
+    --bulma-danger-h: 360deg;
+    --bulma-danger-s: 87%;
+    --bulma-danger-l: 58%;
+    --light-gradient: linear-gradient(135deg, rgba(211, 198, 245, 0.5) 0%, rgba(255, 191, 203, 0.5) 50%, rgba(190, 153, 199, 0.5) 100%);
+    --dark-gradient: linear-gradient(225deg, rgba(26, 36, 73, 1) 0%, rgba(53, 70, 90, 1) 50%, rgba(50, 68, 81, 1) 100%);
+    --light-bg: #f5dbb9;
+    --dark-bg: #020814;
+    --dark-text: #fff;
+}
+* {
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+h1 , h2, p {
+    text-align: center;
+}
+
+.header {
+    background: var(--light-gradient);
+    padding: 1.2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .logo {
+    font-weight: bolder;
+    font-size: 3rem;
+}
+
+.illustration-section{
+    display: flex;
+    justify-content: center;
+}
+/* Styles pour la section random-facts */
+.random-facts {
+    width: 70%;
+    height: 15em;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Transition pour chaque fait */
+.random-facts p {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.random-facts p.active {
+    opacity: 1;
+}
+
+.fact-emoji{
+    font-size: 1.5rem;
+}
+
+.whoAmI{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+   
+}
+
+.project-gallery {
+    display: flex;
+    justify-content: center;
+}
+
+.project-card {
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    writing-mode: vertical-rl;
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    margin: 10px;
+    box-shadow: 2px 5px 10px 3px rgba(0, 0, 0, .2);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+    transition: transform 300ms ease;
+    box-shadow: 4px 8px 15px 5px rgba(0, 0, 0, .3);
+}
+
+.project-card h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.project-card button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.project-card button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background: var(--light-gradient);
+}
+
+footer .follow {
+    font-size: 2.5rem;
+}
+
+
+/* Toggle Switch for Dark Mode */
+.toggle-switch {
+    position: relative;
+    width: 110px;
+    height: 50px;
+    display: inline-block;
+}
+
+.toggle-switch input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:#555;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.slider i {
+    font-size: 2rem;
+    color: white;
+    transition: opacity 0.3s ease;
+}
+
+.slider .fa-sun {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.slider .fa-moon {
+    opacity: 1;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 44px;
+    width: 44px;
+    left: 3px;
+    bottom: 3px;
+    background-color:white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for dark mode activation */
+.toggle-switch input:checked+.slider {
+    background-color: #333;
+    padding: 0 1rem;
+}
+
+.toggle-switch input:checked+.slider:before {
+    transform: translateX(58px);
+}
+
+.toggle-switch input:checked+.slider .fa-sun {
+    opacity: 1;
+}
+
+.toggle-switch input:checked+.slider .fa-moon {
+    opacity: 0;
+}
+
+/* Dark Mode Styles */
+
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+body.dark-mode .header {
+    background: var(--dark-gradient);
+}
+
+body.dark-mode footer {
+    background: var(--dark-gradient);
+}
+
+/* Mode sombre pour random-facts */
+body.dark-mode .random-facts {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+    border: var(--border-bold);
+    box-shadow: 0 4px 8px rgba(247, 246, 246, 0.863);
+}
+
+body.dark-mode .header .logo,
+body.dark-mode .modal-content,
+body.dark-mode footer,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode p,
+body.dark-mode a {
+    color: var(--dark-text);
+}

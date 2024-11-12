@@ -42,12 +42,7 @@ ob_start();
                     <span class="icon is-left">
                         <i class="fas fa-user"></i>
                     </span>
-                    <span class="icon is-right">
-                        <i class="fas fa-check"></i>
-                    </span>
-                    <span class="icon is-right">
-                        <i class="fas fa-exclamation-triangle"></i>
-                    </span>
+
                 </div>
                 <div class="error">
                     <p class="help is-danger"><?= $errors['name'] ?? '' ?></p>
@@ -57,15 +52,9 @@ ob_start();
             <div class="field">
                 <label class="label" for="email">Email</label>
                 <div class="control has-icons-left has-icons-right">
-                    <input class="input" type="email" placeholder="e.g. alexsmith@gmail.cpm" id="email" name="email" value="<?= htmlspecialchars($_POST['email'] ?? '') ?>">
+                    <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com" id="email" name="email" value="<?= htmlspecialchars($_POST['email'] ?? '') ?>">
                     <span class="icon is-left">
                         <i class="fas fa-envelope"></i>
-                    </span>
-                    <span class="icon is-right">
-                        <i class="fas fa-check"></i>
-                    </span>
-                    <span class="icon is-right">
-                        <i class="fas fa-exclamation-triangle"></i>
                     </span>
                 </div>
                 <div class="error">

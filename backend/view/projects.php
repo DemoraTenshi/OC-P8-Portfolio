@@ -23,7 +23,7 @@ ob_start();
                     data-description="<?= htmlspecialchars($project['description'] ?? 'Aucune description') ?>"
                     data-github="<?= htmlspecialchars($project['html_url'] ?? '#') ?>"
                     data-deployment="<?= htmlspecialchars($project['homepage'] ?? $project['html_url']) ?>"
-                    data-screenshot="<?= isset($project['screenshot']) ? base64_encode($project['screenshot']) : '' ?>">
+                    data-screenshot="<?= isset($project['screenshot']) ? $project['screenshot'] : '' ?>">
                     <h1><?= htmlspecialchars($project['name']) ?></h1>
                     <button class="open-modal-btn">Voir plus</button>
                 </div>
@@ -33,28 +33,33 @@ ob_start();
         <?php endif; ?>
     </div>
 
-    <!-- Modale -->
+    <!-- Modale pour afficher le projet -->
     <div class="modal">
-        <div class="modal-background">
+        <div class="modal-background"></div>
+        <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-head" id="modal-title"></p>
+                <p class="modal-card-title" id="modal-title">Titre du projet</p>
                 <button class="delete" aria-label="close"></button>
             </header>
             <section class="modal-card-body">
-                <p id="modal-description"></p>
-                <a id="modal-github" href="#" target="_blank" rel="noopener noreferrer">
+                <p id="modal-description">Description du projet</p>
+            </section>
+            <section class="modal-card-body">
+                <img id="modal-screenshot" src="" alt="Screenshot du projet" style="display: none;" />
+            </section>
+            <section class="modal-card-body">
+                <a id="modal-github" href="#" target="_blank">
                     <i class="fa-solid fa-code"></i>
                 </a>
-                <a id="modal-deployment" href="#" target="_blank" rel="noopener noreferrer">
+                <a id="modal-deployment" href="#" target="_blank">
                     <i class="fa-solid fa-desktop"></i>
                 </a>
-                <img id="modal-screenshot" src="" alt="Screenshot" style="display: none;">
             </section>
-            <footer class="modal-card-footer">
-                <button class="modal-close is-large" aria-label="close"></button>
+            <footer class="modal-card-foot">
             </footer>
         </div>
     </div>
+
 
 </section>
 

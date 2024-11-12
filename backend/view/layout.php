@@ -18,7 +18,9 @@
 
 <body>
     <header class="header">
-        <a href="index.php?page=home" class="logo">Portfolio</a>
+        <a href="index.php?page=home" class="logo">
+            <img src="http://localhost/tests/OC-P8-Portfolio/frontend/assets/logo/LogoCecileBlack.png" alt="Demoracoon Pawfolio">
+        </a>
         <nav class="navbar-menu" role="navigation" aria-label="main navigation">
             <div class="navbar-end">
                 <a href="index.php?page=home" class="navbar-item" id="home-link">Home</a>
@@ -44,12 +46,13 @@
     <footer class="footer">
         <div class="content has-text-centered">
             <div class="follow">
+                <a href="frontend/files/Cécile_Pecquerie_CV.pdf" download="Cécile_Pecquerie_CV" class="fa-solid fa-download" target="_blank" rel="noopener noreferrer"></a>
                 <a href="https://www.linkedin.com/in/cécile-pecquerie-05b58797/" class="fab fa-linkedin" target="_blank" rel="noopener noreferrer"></a>
                 <a href="#" class="fab fa-instagram"></a>
                 <a href="https://github.com/DemoraTenshi" class="fab fa-github" target="_blank" rel="noopener noreferrer"></a>
             </div>
             <div class="credits">
-                <a href="https://www.flaticon.com/free-icons/maple-leaf" title="maple leaf icons">Maple leaf icons created by max.icons - Flaticon</a>
+
             </div>
         </div>
     </footer>

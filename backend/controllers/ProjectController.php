@@ -16,7 +16,6 @@ class ProjectController
     {
         $githubProjects = $this->projectModel->getGithubProjects(); // Récupération des projets GitHub
 
-
         return $githubProjects;
     }
 }

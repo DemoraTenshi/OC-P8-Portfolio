@@ -16,11 +16,8 @@ class ContactController
         $message = '';
 
         // Validation
-        if (empty($data['first_name'])) {
-            $errors['first_name'] = 'First name required.';
-        }
-        if (empty($data['last_name'])) {
-            $errors['last_name'] = 'Last name required.';
+        if (empty($data['name'])) {
+            $errors['name'] = 'Name required.';
         }
         if (empty($data['email'])) {
             $errors['email'] = 'Email required.';
@@ -32,8 +29,7 @@ class ContactController
         // Si pas d'erreurs, enregistrer le message
         if (empty($errors)) {
             $result = $this->contactModel->saveMessage(
-                $data['first_name'],
-                $data['last_name'],
+                $data['name'],
                 $data['email'],
                 $data['phone'],
                 $data['company'],

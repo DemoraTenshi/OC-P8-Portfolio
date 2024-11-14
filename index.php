@@ -1,28 +1,19 @@
 <?php
 // index.php
+// Afficher toutes les erreurs, avertissements et notifications
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// Le reste de ton code...
+require_once 'backend/controllers/GeneralController.php';
+
+// Instancie le contrôleur général
+$generalController = new GeneralController();
 
 // Récupère le paramètre "page" de l'URL, par défaut 'home'
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
-// Définit le chemin vers le contenu en fonction de la page
-switch ($page) {
-    case 'about':
-        $contentFile = 'backend/view/about.php'; // Chemin vers votre page About
-        break;
-    case 'projects':
-        $contentFile = 'backend/view/projects.php'; // Chemin vers votre page Projects
-        break;
-    case 'contact':
-        $contentFile = 'backend/view/contact.php'; // Chemin vers votre page Contact
-        break;
-    case 'home':
-    default:
-        $contentFile = 'backend/view/home.php'; // Chemin vers votre page Home
-        break;
-}
 
-// Inclut le contenu de la page pour récupérer le titre et le contenu
-include $contentFile; // Inclut le fichier de contenu
-
-// Inclut le layout principal
-include 'backend/view/layout.php';
+// Appelle la méthode pour gérer la page demandée
+$generalController->handleRequest($page);

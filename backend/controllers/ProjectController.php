@@ -1,5 +1,6 @@
 <?php
 
+// Dans controllers/ProjectController.php
 require_once __DIR__ . '/../models/ProjectModel.php';
 
 class ProjectController
@@ -8,14 +9,24 @@ class ProjectController
 
     public function __construct()
     {
-        $this->projectModel = new ProjectModel(); // Pas besoin de passer la base de données
+        $this->projectModel = new ProjectModel(); // Initialise le modèle de projets
     }
 
-    // Récupérer tous les projets et les envoyer à la vue
-    public function showProjects()
+    // Méthode pour afficher la page des projets
+    public function show()
     {
-        $githubProjects = $this->projectModel->getGithubProjects(); // Récupération des projets GitHub
+        // Titre de la page
+        $title = "Projects";
 
-        return $githubProjects;
+        // Récupère les projets GitHub
+        $githubProjects = $this->projectModel->getGithubProjects();
+
+        // Capture la vue dans $content
+        ob_start();
+        include __DIR__ . '/../view/projects.php';
+        $content = ob_get_clean();
+
+        // Inclut le layout principal avec $content
+        include __DIR__ . '/../view/layout.php';
     }
 }

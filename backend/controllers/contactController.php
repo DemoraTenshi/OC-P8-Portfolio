@@ -1,4 +1,5 @@
 <?php
+// Dans controllers/ContactController.php
 require_once __DIR__ . '/../models/Contact.php';
 
 class ContactController
@@ -10,12 +11,34 @@ class ContactController
         $this->contactModel = new Contact($db);
     }
 
+    public function show()
+    {
+        $title = "Contact";
+        $message = "";
+        $errors = [];
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $response = $this->handleContactForm($_POST);
+            $errors = $response['errors'] ?? [];
+            $message = $response['message'] ?? '';
+
+            if (empty($errors)) {
+                $_POST = [];
+            }
+        }
+
+        ob_start();
+        include __DIR__ . '/../view/contact.php';
+        $content = ob_get_clean();
+
+        include __DIR__ . '/../view/layout.php';
+    }
+
     public function handleContactForm($data)
     {
         $errors = [];
         $message = '';
 
-        // Validation
         if (empty($data['name'])) {
             $errors['name'] = 'Name required.';
         }
@@ -26,7 +49,6 @@ class ContactController
             $errors['message'] = 'Message required.';
         }
 
-        // Si pas d'erreurs, enregistrer le message
         if (empty($errors)) {
             $result = $this->contactModel->saveMessage(
                 $data['name'],
@@ -37,11 +59,7 @@ class ContactController
                 $data['message']
             );
 
-            if ($result) {
-                $message = "Your message was sent successfully.";
-            } else {
-                $message = "An error has occurred. Please try again.";
-            }
+            $message = $result ? "Your message was sent successfully." : "An error has occurred. Please try again.";
         }
 
         return ['errors' => $errors, 'message' => $message];

@@ -1,16 +1,8 @@
 <?php
-$title = "Portfolio";
+// Vue: backend/view/home.php
 
-// Inclut le contrôleur
-require_once __DIR__ . "/../controllers/FactController.php";
+// Suppression de l'appel direct au contrôleur
 
-$factController = new FactController();
-
-// Récupère un fait aléatoire
-$randomFact = $factController->getRandomFact();
-
-// Commence la mise en tampon pour capturer le contenu
-ob_start();
 ?>
 <div class="content container">
     <section class="section">
@@ -20,11 +12,10 @@ ob_start();
 
         <div class="random-facts">
             <h1 class="title is-3">Random facts</h1>
-            <!-- Champs à mettre à jour avec JavaScript -->
             <div class="fact-container">
-                <h2 class="fact-title title is-4"></h2>
-                <p class="fact-content"></p>
-                <span class="fact-emoji"></span>
+                <h2 class="fact-title title is-4"><?= htmlspecialchars($randomFact['title']) ?></h2>
+                <p class="fact-content"><?= htmlspecialchars($randomFact['content']) ?></p>
+                <span class="fact-emoji"><?= htmlspecialchars($randomFact['emoji']) ?></span>
             </div>
         </div>
 
@@ -35,8 +26,4 @@ ob_start();
         <h2 class="title is-2">Want to know me and my work?</h2>
         <p>Open the door and come in!</p>
     </section>
-
-
 </div>
-<?php
-$content = ob_get_clean();

@@ -1,29 +1,5 @@
 <?php
-$title = "Contact";
-$message = "";
-$errors = [];
-
-// Si le formulaire est soumis, gérer la soumission
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    require_once __DIR__ . '/../config/Database.php';
-    require_once __DIR__ . '/../controllers/ContactController.php';
-
-    $db = Database::getInstance()->getConnection();
-    $contactController = new ContactController($db);
-    $response = $contactController->handleContactForm($_POST);
-
-    // Récupérer les erreurs et le message de statut
-    $errors = $response['errors'] ?? [];
-    $message = $response['message'] ?? '';
-
-    // Si le formulaire a été envoyé avec succès, vider les champs
-    if (empty($errors)) {
-        $_POST = []; // Vider les champs du formulaire
-    }
-}
-
-// Commence la mise en tampon pour capturer le contenu
-ob_start();
+// Vue: backend/view/contact.php
 ?>
 
 <div class="content container">
@@ -42,7 +18,6 @@ ob_start();
                     <span class="icon is-left">
                         <i class="fas fa-user"></i>
                     </span>
-
                 </div>
                 <div class="error">
                     <p class="help is-danger"><?= $errors['name'] ?? '' ?></p>
@@ -105,5 +80,3 @@ ob_start();
         </form>
     </section>
 </div>
-<?php
-$content = ob_get_clean();

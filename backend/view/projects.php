@@ -1,20 +1,13 @@
 <?php
-$title = "Projects";
+// Vue: backend/view/projects.php
 
-// Inclut le contrôleur
-require_once __DIR__ . "/../controllers/ProjectController.php";
-
-$projectController = new ProjectController();
-$githubProjects = $projectController->showProjects();
-
-ob_start();
 ?>
 
 <section class="content">
-
     <div class="illustration-section">
         <img id="illustration" data-light="frontend/images/Jour.png" data-dark="frontend/images/nuit.png" src="frontend/images/Jour.png" alt="Illustration">
     </div>
+
     <div class="project-gallery">
         <?php if (isset($githubProjects) && !empty($githubProjects) && is_array($githubProjects)) : ?>
             <?php foreach ($githubProjects as $project): ?>
@@ -59,9 +52,4 @@ ob_start();
             </footer>
         </div>
     </div>
-
-
 </section>
-
-<?php
-$content = ob_get_clean();

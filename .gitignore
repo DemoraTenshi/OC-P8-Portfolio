@@ -3,3 +3,6 @@ tests
 skills_data.sql
 contact.sql
 facts.sql
+.vscode
+factsFr.sql
+skills_dataFr.sql

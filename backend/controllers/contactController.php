@@ -1,19 +1,22 @@
 <?php
 // Dans controllers/ContactController.php
-require_once __DIR__ . '/../models/Contact.php';
+require_once __DIR__ . '/../models/ContactModel.php';
+require_once __DIR__ . '/../config/Language.php';
 
 class ContactController
 {
     private $contactModel;
+    private $translations;
 
-    public function __construct($db)
+    public function __construct($db, $language)
     {
         $this->contactModel = new Contact($db);
+        $this->translations = loadTranslations($language);
     }
 
     public function show()
     {
-        $title = "Contact";
+        $title = $this->translations['contact']['contact_me'];
         $message = "";
         $errors = [];
 
@@ -26,6 +29,9 @@ class ContactController
                 $_POST = [];
             }
         }
+
+        // Passer les traductions à la vue
+        $translations = $this->translations['contact'];
 
         ob_start();
         include __DIR__ . '/../view/contact.php';
@@ -40,13 +46,13 @@ class ContactController
         $message = '';
 
         if (empty($data['name'])) {
-            $errors['name'] = 'Name required.';
+            $errors['name'] = $this->translations['contact']['required_fields']['name'];
         }
         if (empty($data['email'])) {
-            $errors['email'] = 'Email required.';
+            $errors['email'] = $this->translations['contact']['required_fields']['email'];
         }
         if (empty($data['message'])) {
-            $errors['message'] = 'Message required.';
+            $errors['message'] = $this->translations['contact']['required_fields']['message'];
         }
 
         if (empty($errors)) {
@@ -59,7 +65,7 @@ class ContactController
                 $data['message']
             );
 
-            $message = $result ? "Your message was sent successfully." : "An error has occurred. Please try again.";
+            $message = $result ? $this->translations['contact']['success_message'] : $this->translations['contact']['error_message'];
         }
 
         return ['errors' => $errors, 'message' => $message];

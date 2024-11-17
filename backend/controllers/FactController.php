@@ -1,21 +1,32 @@
 <?php
-// Dans controllers/FactController.php
-require_once __DIR__ . '/../models/Fact.php';
+
+require_once __DIR__ . '/../models/FactModel.php';
+require_once __DIR__ . '/../config/Language.php';
+
 
 class FactController
 {
     private $factModel;
+    private $translations;
 
-    public function __construct()
+    public function __construct($language)
     {
-        $this->factModel = new Fact();
+        // Instancier le modèle de données avec la langue
+        $this->factModel = new Fact($language);
+
+        // Charger les traductions
+        $this->translations = loadTranslations($language);
     }
 
     // Méthode pour récupérer un fait aléatoire et afficher la vue `home`
     public function show()
     {
         // Titre de la page
-        $title = "Portfolio";
+        $title = $this->translations['home']['title'];
+        $description = $this->translations['home']['description'];
+        $randomTitle = $this->translations['home']['random_facts'];
+        $knowMe = $this->translations['home']['want_to_know_me'];
+        $door = $this->translations['home']['open_the_door'];
 
         // Récupère un fait aléatoire
         $randomFact = $this->factModel->getRandomFact();
@@ -33,5 +44,12 @@ class FactController
     public function getRandomFact()
     {
         return $this->factModel->getRandomFact();
+    }
+
+    // Méthode pour gérer les requêtes AJAX pour les faits aléatoires
+    public function handleRandomFactRequest()
+    {
+        header("Content-Type: application/json");
+        echo json_encode($this->factModel->getRandomFact());
     }
 }

@@ -12,7 +12,7 @@ class Contact
 
     public function saveMessage($name, $email, $phone, $company, $subject, $message)
     {
-        $query = "INSERT INTO " . $this->table . " (first_name, last_name, email, phone, company, subject, message) VALUES (:first_name, :last_name, :email, :phone, :company, :subject, :message)";
+        $query = "INSERT INTO " . $this->table . " (name, email, phone, company, subject, message) VALUES (:name, :email, :phone, :company, :subject, :message)";
 
         $stmt = $this->conn->prepare($query);
 

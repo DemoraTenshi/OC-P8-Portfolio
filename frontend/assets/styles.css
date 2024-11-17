@@ -21604,7 +21604,7 @@ h1, h2, p {
 /* Styles pour la section random-facts */
 .random-facts {
   width: 70%;
-  height: 15em;
+  height: 18em;
   margin: 2rem auto;
   padding: 1.5rem;
   text-align: center;
@@ -21624,7 +21624,7 @@ h1, h2, p {
 }
 
 .fact-emoji {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .whoAmI {
@@ -21632,6 +21632,10 @@ h1, h2, p {
   align-items: center;
   justify-content: center;
   gap: 20px;
+}
+
+.project-illustration-section {
+  position: relative;
 }
 
 .project-gallery {
@@ -21662,14 +21666,14 @@ h1, h2, p {
 }
 
 .project-card h1 {
-  font-size: 2rem;
+  font-size: 1.2rem;
   margin-bottom: 10px;
 }
 
 .project-card button {
   margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1.2rem;
+  padding: 10px;
+  font-size: 1rem;
   background-color: #007BFF;
   color: #fff;
   border: none;

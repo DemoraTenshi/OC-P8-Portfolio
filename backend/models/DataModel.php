@@ -8,12 +8,15 @@ require_once __DIR__ . '/../config/Database.php';
 class DataModel
 {
     private $conn;
-    private $table = "skills_data"; // Le nom de ta table
+    private $table;
 
-    public function __construct()
+    public function __construct($language)
     {
         // Obtenez la connexion de la base de données
         $this->conn = Database::getInstance()->getConnection();
+
+        // Définir la table en fonction de la langue
+        $this->table = ($language === 'fr') ? 'skills_data_fr' : 'skills_data';
     }
 
     // Récupère les données pour les graphiques

@@ -1,11 +1,13 @@
 <?php
 // Vue: backend/view/projects.php
-
 ?>
 
 <section class="content">
-    <div class="illustration-section">
-        <img id="illustration" data-light="frontend/images/Jour.png" data-dark="frontend/images/nuit.png" src="frontend/images/Jour.png" alt="Illustration">
+    <div>
+        <h1><?php echo $translations['work']; ?></h1>
+    </div>
+    <div class="project-illustration-section">
+        <img id="illustration" data-light="frontend/assets/images/Etagere.pn" data-dark="frontend/assets/images/Etagere.pn" src="frontend/assets/images/Etagere.pn" alt="Illustration">
     </div>
 
     <div class="project-gallery">
@@ -20,6 +22,8 @@
                     <h1><?= htmlspecialchars($project['name']) ?></h1>
                     <button class="open-modal-btn">Voir plus</button>
                 </div>
+
+
             <?php endforeach; ?>
         <?php else : ?>
             <p>Aucun projet disponible pour le moment.</p>

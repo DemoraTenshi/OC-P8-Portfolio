@@ -5,15 +5,18 @@ require_once __DIR__ . '/../config/Database.php';
 class Fact
 {
     private $conn;
-    private $table = "facts";
+    private $table;
 
-    public function __construct()
+    public function __construct($language)
     {
         // Obtenez la connexion de la base de données
         $this->conn = Database::getInstance()->getConnection();
+
+        // Définir la table en fonction de la langue
+        $this->table = ($language === 'fr') ? 'factsFr' : 'facts';
     }
 
-    // Récupère un fait aléatoire
+    // Récupère les faits aléatoires
     public function getRandomFact()
     {
         $query = "SELECT title, content, emoji FROM " . $this->table . " ORDER BY RAND() LIMIT 1";

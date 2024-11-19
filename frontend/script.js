@@ -1,37 +1,63 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const currentPage = new URLSearchParams(window.location.search).get('page') || 'home';
+const currentPage = new URLSearchParams(window.location.search).get('page') || 'home';
+const toggleSwitch = document.getElementById('darkModeToggle');
+const illustration = document.getElementById('illustration');
+const logo = document.getElementById('logo');
 
-    // dark/light mode toggle
-    const toggleSwitch = document.getElementById('darkModeToggle');
-    const illustration = document.getElementById('illustration');
+// Variables pour stocker les chemins des images
+let lightImage, darkImage, lightLogo, darkLogo;
 
-    if (toggleSwitch && illustration && logo) {
-        const lightImage = illustration.getAttribute('data-light');
-        const darkImage = illustration.getAttribute('data-dark');
-        const lightLogo = logo.getAttribute('data-light-logo');
-        const darkLogo = logo.getAttribute('data-dark-logo');
-
-        if (localStorage.getItem('darkMode') === 'enabled') {
-            document.body.classList.add('dark-mode');
-            illustration.src = darkImage;
-            logo.src = darkLogo;
-            toggleSwitch.checked = true;
-        }
-
-        toggleSwitch.addEventListener('change', () => {
-            document.body.classList.toggle('dark-mode');
-
-            if (document.body.classList.contains('dark-mode')) {
-                illustration.src = darkImage;
-                logo.src = darkLogo;
-                localStorage.setItem('darkMode', 'enabled');
-            } else {
-                illustration.src = lightImage;
-                logo.src = lightLogo;
-                localStorage.setItem('darkMode', 'disabled');
-            }
-        });
+if (toggleSwitch) {
+    // Si l'illustration existe, récupérer ses chemins d'images
+    if (illustration) {
+        lightImage = illustration.getAttribute('data-light');
+        darkImage = illustration.getAttribute('data-dark');
     }
+
+    // Si le logo existe, récupérer ses chemins d'images
+    if (logo) {
+        lightLogo = logo.getAttribute('data-light-logo');
+        darkLogo = logo.getAttribute('data-dark-logo');
+    }
+
+    // Appliquer le dark mode si activé
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+        toggleSwitch.checked = true;
+        
+        // Mettre à jour les images si elles existent
+        if (illustration && darkImage) {
+            illustration.src = darkImage;
+        }
+        if (logo && darkLogo) {
+            logo.src = darkLogo;
+        }
+    }
+
+    // Gestionnaire d'événements pour le toggle
+    toggleSwitch.addEventListener('change', () => {
+        document.body.classList.toggle('dark-mode');
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        
+        if (isDarkMode) {
+            localStorage.setItem('darkMode', 'enabled');
+            if (illustration && darkImage) {
+                illustration.src = darkImage;
+            }
+            if (logo && darkLogo) {
+                logo.src = darkLogo;
+            }
+        } else {
+            localStorage.setItem('darkMode', 'disabled');
+            if (illustration && lightImage) {
+                illustration.src = lightImage;
+            }
+            if (logo && lightLogo) {
+                logo.src = lightLogo;
+            }
+        }
+    });
+}
 
     // Random facts code (home page)
 if (currentPage === 'home') {
@@ -64,7 +90,9 @@ if (currentPage === 'home') {
 
     // Handle modal (projects page)
     if (currentPage === 'projects') {
-        const openModalButtons = document.querySelectorAll('.open-modal-btn');
+        // Log pour vérifier si nous sommes sur la bonne page
+        console.log('On projects page');
+        
         const modal = document.querySelector('.modal');
         const modalBackground = document.querySelector('.modal-background');
         const modalTitle = document.getElementById('modal-title');
@@ -73,21 +101,31 @@ if (currentPage === 'home') {
         const modalDeployment = document.getElementById('modal-deployment');
         const modalScreenshot = document.getElementById('modal-screenshot');
         const closeModalButtons = document.querySelectorAll('.delete, .modal-close');
+        
+        // Sélectionner les project cards au lieu des titres
+        const projectCards = document.querySelectorAll('.project-card');
 
-        openModalButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const projectCard = this.parentElement;
-                modalTitle.textContent = projectCard.getAttribute('data-title');
-                modalDescription.textContent = projectCard.getAttribute('data-description');
-                modalGithub.href = projectCard.getAttribute('data-github');
-                modalDeployment.href = projectCard.getAttribute('data-deployment');
-                const screenshotSrc = projectCard.getAttribute('data-screenshot');
+        // Log pour vérifier si nous trouvons les cartes
+        console.log('Found project cards:', projectCards.length);
+
+        projectCards.forEach(card => {
+            // Ajouter l'événement click sur toute la carte
+            card.addEventListener('click', function() {
+                console.log('Card clicked'); // Log pour vérifier le clic
+                
+                modalTitle.textContent = this.getAttribute('data-title');
+                modalDescription.textContent = this.getAttribute('data-description');
+                modalGithub.href = this.getAttribute('data-github');
+                modalDeployment.href = this.getAttribute('data-deployment');
+                
+                const screenshotSrc = this.getAttribute('data-screenshot');
                 if (screenshotSrc) {
                     modalScreenshot.src = screenshotSrc;
                     modalScreenshot.style.display = 'block';
                 } else {
                     modalScreenshot.style.display = 'none';
                 }
+                
                 modal.classList.add('is-active');
             });
         });

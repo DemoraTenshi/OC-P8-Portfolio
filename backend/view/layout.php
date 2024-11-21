@@ -31,29 +31,49 @@ $layoutTranslations = $translations['layout'];
 </head>
 
 <body>
-    <header class="header">
-        <div class="logo-section">
-            <a href="index.php?page=home" class="logo">
-                <img id="logo" data-light-logo="frontend/assets/logo/LogoCecileBlack.png" data-dark-logo="frontend/assets/logo/LogoCecileBlanc.png" src="frontend/assets/logo/LogoCecileBlack.png" alt="Demoracoon Pawfolio">
-            </a>
-        </div>
-        <nav class="navbar-menu" role="navigation" aria-label="main navigation">
-            <div class="navbar-end">
-                <a href="index.php?page=home" class="navbar-item" id="home-link"><?php echo $layoutTranslations['home']; ?></a>
-                <a href="index.php?page=about" class="navbar-item" id="about-link"><?php echo $layoutTranslations['about']; ?></a>
-                <a href="index.php?page=projects" class="navbar-item" id="projects-link"><?php echo $layoutTranslations['Projects']; ?></a>
-                <a href="index.php?page=contact" class="navbar-item" id="contact-link"><?php echo $layoutTranslations['Contact']; ?></a>
+    <header class="navbar is-primary" style="width: 100%;">
+        <div class="container-fluid p-0" style="width: 100%;">
+            <div class="navbar is-flex is-justify-content-space-between is-align-items-center pr-4">
+                <div class="navbar-brand ml-0 pl-0">
+                    <a href="index.php?page=home" class="navbar-item p-0 ml-0">
+                        <img id="logo"
+
+                            data-light-logo="frontend/assets/logo/LogoCecileBlack.png"
+                            data-dark-logo="frontend/assets/logo/LogoCecileBlanc.png"
+                            src="frontend/assets/logo/LogoCecileBlack.png"
+                            alt="Demoracoon Pawfolio">
+                    </a>
+                </div>
+                <div class="navbar-end">
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div id="navMenu" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a href="index.php?page=home" class="navbar-item" id="home-link"><?php echo $layoutTranslations['home']; ?></a>
+                        <a href="index.php?page=about" class="navbar-item" id="about-link"><?php echo $layoutTranslations['about']; ?></a>
+                        <a href="index.php?page=projects" class="navbar-item" id="projects-link"><?php echo $layoutTranslations['Projects']; ?></a>
+                        <a href="index.php?page=contact" class="navbar-item" id="contact-link"><?php echo $layoutTranslations['Contact']; ?></a>
+                    </div>
+                </div>
+
+                <div class="navbar-end">
+                    <label class="toggle-switch navbar-item">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="slider">
+                            <i class="fa-regular fa-sun" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-moon"></i>
+                        </span>
+                    </label>
+                </div>
             </div>
-        </nav>
-        <!-- Toggle Switch pour le mode sombre/clair -->
-        <label class="toggle-switch">
-            <input type="checkbox" id="darkModeToggle">
-            <span class="slider">
-                <i class="fa-regular fa-sun" style="color: #FFD43B;"></i>
-                <i class="fa-solid fa-moon"></i>
-            </span>
-        </label>
+        </div>
     </header>
+
 
     <main class="container">
         <?= $content ?> <!-- Affiche le contenu de la page ici -->

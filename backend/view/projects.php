@@ -7,11 +7,19 @@
         <h1 class="projects-title"><?php echo $translations['work']; ?></h1>
     </div>
     <div class="project-illustration-section">
-        <img id="illustration"
-            data-light="frontend/assets/images/etageresansfond.png"
-            data-dark="frontend/assets/images/etageresansfond.png"
-            src="frontend/assets/images/etageresansfond.png"
-            alt="Illustration">
+        <div id="illustration-wrapper">
+            <!-- Image mode clair -->
+            <picture class="light-mode-picture">
+                <source media="(max-width: 943px)" srcset="frontend/assets/images/etageresansfondMobile.png">
+                <img src="frontend/assets/images/etageresansfond.png" alt="Illustration">
+            </picture>
+
+            <!-- Image mode sombre -->
+            <picture class="dark-mode-picture" style="display: none;">
+                <source media="(max-width: 943px)" srcset="frontend/assets/images/etagerenuitMobile.png">
+                <img src="frontend/assets/images/etagerenuit.png" alt="Illustration">
+            </picture>
+        </div>
 
         <div class="project-gallery">
             <?php if (isset($githubProjects) && !empty($githubProjects) && is_array($githubProjects)) : ?>

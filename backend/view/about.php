@@ -14,7 +14,7 @@ $title = "About";
     <section class="section">
         <h2 class="title is-3"><?php echo $recipe_title; ?></h2>
         <div class="whoAmI">
-            <div class="chart-container" id="pie" style="position: relative; height:40vh; width:40vw">
+            <div class="chart-container" id="pie" style="position: relative;">
                 <canvas id="pieChart"></canvas>
             </div>
             <div class="receipe-container">
@@ -58,15 +58,23 @@ $title = "About";
     </section>
     <section class="section">
         <h2 class="title is-3"><?php echo $skills; ?></h2>
-        <div class="chart-container" style="position: relative; height:50vh; width:60vw">
+        <div class="chart-container" style="position: relative; height:50vh;">
             <canvas id="barChart"></canvas>
         </div>
     </section>
     <section class="section">
         <h2 class="title is-2"><?php echo $my_work; ?></h2>
         <p><?php echo $my_work_1; ?></p>
-        <div class="illustration-section">
-            <img id="illustration" data-light="frontend/assets/images/Jour.png" data-dark="frontend/assets/images/nuit.png" src="frontend/assets/images/Jour.png" alt="Illustration">
+        <div class="illustration-section" id="illustration-wrapper">
+            <picture class="light-mode-picture">
+                <img src="frontend/assets/images/Jour.png" alt="Illustration">
+            </picture>
+
+            <!-- Image mode sombre -->
+            <picture class="dark-mode-picture" style="display: none;">
+                <img src="frontend/assets/images/nuit.png" alt="Illustration">
+            </picture>
+
         </div>
     </section>
 </div>

@@ -19,8 +19,16 @@
             </div>
         </div>
 
-        <div class="illustration-section">
-            <img id="illustration" data-light="frontend/assets/images/cabin.jpg" data-dark="frontend/assets/images/bookstore2.jpg" src="frontend/assets/images/cabin.jpg" alt="Illustration">
+        <div class="illustration-section" id="illustration-wrapper">
+            <picture class="light-mode-picture">
+                <img src="frontend/assets/images/cabin.jpg" alt="Illustration">
+            </picture>
+
+            <!-- Image mode sombre -->
+            <picture class="dark-mode-picture" style="display: none;">
+                <img src="frontend/assets/images/bookstore2.jpg" alt="Illustration">
+            </picture>
+
         </div>
 
         <h2 class="title is-2"><?php echo $knowMe; ?></h2>

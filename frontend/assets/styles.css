@@ -21568,6 +21568,8 @@ has-background-danger.is-hoverable:active {
   --bulma-danger-h: 360deg;
   --bulma-danger-s: 87%;
   --bulma-danger-l: 58%;
+  --bulma-navbar-item-img-max-height: 133px;
+  --bulma-footer-padding: 3rem 1.5rem;
   --light-gradient: linear-gradient(135deg, rgba(211, 198, 245, 0.5) 0%, rgba(255, 191, 203, 0.5) 50%, rgba(190, 153, 199, 0.5) 100%);
   --dark-gradient: linear-gradient(225deg, rgba(26, 36, 73, 1) 0%, rgba(53, 70, 90, 1) 50%, rgba(50, 68, 81, 1) 100%);
   --light-bg: #f5dbb9;
@@ -21580,21 +21582,15 @@ has-background-danger.is-hoverable:active {
   font-family: "Montserrat Alternates", sans-serif;
 }
 
-h1, h2, p {
+h1,
+h2,
+p {
   text-align: center;
 }
 
-.header {
+.navbar {
   background: var(--light-gradient);
-  padding: 1.2rem 1rem 1.2rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header .logo {
-  font-weight: bolder;
-  font-size: 3rem;
+  --bulma-navbar-item-img-max-height: 133px;
 }
 
 .illustration-section {
@@ -21602,7 +21598,6 @@ h1, h2, p {
   justify-content: center;
 }
 
-/* Styles pour la section random-facts */
 .random-facts {
   width: 70%;
   height: 18em;
@@ -21614,7 +21609,6 @@ h1, h2, p {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Transition pour chaque fait */
 .random-facts p {
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -21641,10 +21635,6 @@ h1, h2, p {
 
 .project-illustration-section {
   position: relative;
-}
-
-.project-illustration-section {
-  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -21653,11 +21643,12 @@ h1, h2, p {
 .project-illustration-section img {
   max-width: 100%;
   height: auto;
+  margin-bottom: 3em;
 }
 
 .project-gallery {
   position: absolute;
-  top: 50.5%;
+  top: 48%;
   left: 50.3%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -21690,11 +21681,15 @@ footer {
   background: var(--light-gradient);
 }
 
+.footer {
+  --bulma-footer-padding: 3rem 1.5rem;
+  margin-top: 130px;
+}
+
 footer .follow {
   font-size: 2.5rem;
 }
 
-/* Toggle Switch for Dark Mode */
 .toggle-switch {
   position: relative;
   width: 110px;
@@ -21753,7 +21748,6 @@ footer .follow {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Styles for dark mode activation */
 .toggle-switch input:checked + .slider {
   background-color: #333;
   padding: 0 1rem;
@@ -21771,13 +21765,13 @@ footer .follow {
   opacity: 0;
 }
 
-/* Dark Mode Styles */
 body.dark-mode {
   background-color: var(--dark-bg);
   color: var(--dark-text);
 }
 
-body.dark-mode .header {
+body.dark-mode .header,
+body.dark-mode .navbar {
   background: var(--dark-gradient);
 }
 
@@ -21785,7 +21779,6 @@ body.dark-mode footer {
   background: var(--dark-gradient);
 }
 
-/* Mode sombre pour random-facts */
 body.dark-mode .random-facts {
   background-color: var(--dark-bg);
   color: var(--dark-text);
@@ -21797,7 +21790,6 @@ body.dark-mode .modal-card-head,
 body.dark-mode .modal-card-foot {
   background-color: var(--dark-modal);
   border-color: var(--dark-text);
-  /* Pour les bordures si vous en avez */
 }
 
 body.dark-mode .modal-card-title {
@@ -21811,21 +21803,17 @@ body.dark-mode .modal-card-body {
 
 body.dark-mode .modal-background {
   background-color: rgba(0, 0, 0, 0.7);
-  /* Un fond semi-transparent plus sombre */
 }
 
-/* Dark Mode Styles pour la page contact */
 body.dark-mode .content.container {
   background-color: var(--dark-bg);
   color: var(--dark-text);
 }
 
-/* Style des labels */
 body.dark-mode .label {
   color: var(--dark-text);
 }
 
-/* Style des inputs et textarea */
 body.dark-mode .input,
 body.dark-mode .textarea {
   background-color: var(--dark-bg);
@@ -21833,7 +21821,6 @@ body.dark-mode .textarea {
   border-color: var(--dark-text);
 }
 
-/* Hover et focus des inputs */
 body.dark-mode .input:hover,
 body.dark-mode .textarea:hover,
 body.dark-mode .input:focus,
@@ -21842,48 +21829,252 @@ body.dark-mode .textarea:focus {
   box-shadow: 0 0 0 0.125em rgba(255, 255, 255, 0.25);
 }
 
-/* Style des icônes dans les inputs */
 body.dark-mode .icon {
   color: var(--dark-text);
 }
 
-/* Style des messages d'erreur */
 body.dark-mode .help.is-danger {
   color: #ff6b6b;
-  /* Une couleur rouge plus adaptée au mode sombre */
 }
 
-/* Style du message de statut */
 body.dark-mode .status-message {
   color: var(--dark-text);
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Style du bouton */
 body.dark-mode .button.is-link {
   background-color: #3273dc;
-  /* Ou votre couleur personnalisée */
   color: var(--dark-text);
 }
 
 body.dark-mode .button.is-link:hover {
   background-color: #2366d1;
-  /* Version plus foncée pour le hover */
 }
 
-/* Style des placeholders */
 body.dark-mode .input::placeholder,
 body.dark-mode .textarea::placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
 
-body.dark-mode .header .logo,
+body.dark-mode .header,
 body.dark-mode footer,
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode p,
 body.dark-mode a {
   color: var(--dark-text);
+}
+
+/* Media Queries for Tablet and Mobile */
+@media (max-width: 1411px) {
+  .project-gallery {
+    width: 90%;
+    gap: 10px;
+  }
+  .project-card {
+    height: 110px;
+    min-width: 38px;
+  }
+  .project-card h1.project-title {
+    font-size: 0.9rem;
+  }
+}
+/* Media Queries for Tablet */
+@media (max-width: 1024px) {
+  .title.is-1 {
+    font-size: 2rem;
+  }
+  .title.is-2 {
+    font-size: 1.8rem;
+  }
+  .title.is-3 {
+    font-size: 2rem;
+  }
+  .title.is-4 {
+    font-size: 1.2rem;
+  }
+  .fact-emoji {
+    font-size: 1.6rem;
+  }
+  .content h1 {
+    font-size: 2rem;
+  }
+  .navbar-brand img {
+    max-height: 100px;
+    /* Réduire la taille du logo en version mobile */
+  }
+  .toggle-switch {
+    width: 80px;
+    height: 40px;
+  }
+  .slider {
+    height: 40px;
+    padding: 0 0.5rem;
+  }
+  .slider i {
+    font-size: 1.5rem;
+  }
+  .slider:before {
+    height: 34px;
+    width: 34px;
+    left: 2px;
+    bottom: 2px;
+  }
+  .toggle-switch input:checked + .slider:before {
+    transform: translateX(42px);
+  }
+  .navbar-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--light-gradient);
+    display: none;
+    /* Masquer le menu par défaut */
+  }
+  .navbar-menu.is-active {
+    display: block;
+    /* Afficher le menu lorsqu'il est actif */
+  }
+  .navbar-burger {
+    display: block;
+    order: 2;
+    /* Assurez-vous que le burger est à droite */
+  }
+  .navbar-end {
+    display: flex;
+    align-items: center;
+  }
+  footer .follow {
+    font-size: 2rem;
+  }
+  .project-gallery {
+    width: 95%;
+    gap: 8px;
+  }
+}
+@media (max-width: 943px) {
+  .project-card {
+    height: 140px;
+    min-width: 58px;
+  }
+  .project-card h1.project-title {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 853px) {
+  .project-card {
+    height: 140px;
+    min-width: 50px;
+  }
+  .project-card h1.project-title {
+    font-size: 1rem;
+  }
+}
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+  .title.is-1 {
+    font-size: 1.8rem;
+  }
+  .title.is-2 {
+    font-size: 1.6rem;
+  }
+  .title.is-3 {
+    font-size: 1.5rem;
+  }
+  .title.is-4 {
+    font-size: 1rem;
+  }
+  .fact-emoji {
+    font-size: 1.2rem;
+  }
+  .navbar-brand img {
+    max-height: 85px;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+  .random-facts {
+    height: 24em;
+  }
+  .whoAmI {
+    flex-direction: column;
+  }
+  li {
+    font-size: 0.8rem;
+  }
+  footer .follow {
+    font-size: 1.8rem;
+  }
+  .content h1 {
+    font-size: 1.8rem;
+  }
+  .project-gallery {
+    width: 100%;
+    gap: 1px;
+  }
+  .project-card {
+    height: 120px;
+    min-width: 52px;
+  }
+}
+@media (max-width: 701px) {
+  .project-card {
+    min-width: 48px;
+  }
+}
+@media (max-width: 650px) {
+  .project-card {
+    height: 120px;
+    min-width: 45px;
+  }
+  .project-card h1.project-title {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 598px) {
+  .project-card {
+    height: 100px;
+    min-width: 40px;
+  }
+}
+@media (max-width: 543px) {
+  .project-card {
+    height: 100px;
+    min-width: 40px;
+  }
+  .project-card h1.project-title {
+    font-size: 0.7rem;
+  }
+}
+@media (max-width: 532px) {
+  .project-gallery {
+    gap: 0;
+    top: 45%;
+  }
+  .project-card {
+    height: 90px;
+    min-width: 35px;
+  }
+}
+@media (max-width: 460px) {
+  .project-card {
+    height: 75px;
+    min-width: 30px;
+  }
+  .project-card h1.project-title {
+    font-size: 0.6rem;
+  }
+}
+@media (max-width: 404px) {
+  .project-card {
+    min-width: 28px;
+  }
+}
+@media (max-width: 396px) {
+  .project-card {
+    min-width: 26px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -6,107 +6,107 @@
     },
     "routes": [
         {
-            "src": "/index.php",
+            "src": "index.php",
             "dest": "index.php"
         },
         {
-            "src":"/script.js",
+            "src":"script.js",
             "dest":"/frontend/script.js"
         },
         {
-            "src":"/assets/styles.css",
+            "src":"assets/styles.css",
             "dest":"/frontend/assets/styles.css"
         },
         {
-            "src":"/assets/styles.css.map",
+            "src":"assets/styles.css.map",
             "dest":"/frontend/assets/styles.css.map"
         },
         {
-            "src":"/assets/styles.scss",
+            "src":"assets/styles.scss",
             "dest":"/frontend/assets/styles.scss"
         },
         {
-            "src":"/assets/images/(.*).png",
+            "src":"assets/images/(.*).png",
             "dest":"/frontend/assets/images/$1.png"
         },
         {
-            "src":"/assets/logo/(.*).png",
+            "src":"assets/logo/(.*).png",
             "dest":"/frontend/assets/logo/$1.png"
         },
         {
-            "src":"/assets/Cécile_Pecquerie_CV.pdf",
+            "src":"assets/Cécile_Pecquerie_CV.pdf",
             "dest":"/frontend/assets/file/Cécile_Pecquerie_CV.pdf"
         },
         {
-            "src":"/backend/about.php",
+            "src":"view/about.php",
             "dest":"/backend/view/about.php"
         },
         {
-            "src":"/backend/contact.php",
+            "src":"view/contact.php",
             "dest":"/backend/view/contact.php"
         },
         {
-            "src":"/backend/home.php",
+            "src":"view/home.php",
             "dest":"/backend/view/home.php"
         },
         {
-            "src":"/backend/layout.php",
+            "src":"view/layout.php",
             "dest":"/backend/view/layout.php"
         },
         {
-            "src":"/backend/projects.php",
+            "src":"view/projects.php",
             "dest":"/backend/view/projects.php"
         },
         {
-            "src":"/backend/fr.php",
+            "src":"lang/fr.php",
             "dest":"/backend/lang/fr.php"
         },
         {
-            "src":"/backend/en.php",
+            "src":"lang/en.php",
             "dest":"/backend/lang/en.php"
         },
         {
-            "src":"/backend/ContactModel.php",
+            "src":"models/ContactModel.php",
             "dest":"/backend/models/ContactModel.php"
         },
         {
-            "src":"/backend/DataModel.php",
+            "src":"models/DataModel.php",
             "dest":"/backend/models/DataModel.php"
         },
         {
-            "src":"/backend/FactModel.php",
+            "src":"models/FactModel.php",
             "dest":"/backend/models/FactModel.php"
         },
         {
-            "src":"/backend/ProjectModel.php",
+            "src":"models/ProjectModel.php",
             "dest":"/backend/models/ProjectModel.php"
         },
         {
-            "src":"/backend/ContactController.php",
+            "src":"controllers/ContactController.php",
             "dest":"/backend/controllers/ContactController.php"
         },
         {
-            "src":"/backend/FactController.php",
+            "src":"controllers/FactController.php",
             "dest":"/backend/controllers/FactController.php"
         },
         {
-            "src":"/backend/DataController.php",
+            "src":"controllers/DataController.php",
             "dest":"/backend/controllers/DataController.php"
         },
         {
-            "src":"/backend/GeneralController.php",
+            "src":"controllers/GeneralController.php",
             "dest":"/backend/controllers/GeneralController.php"
         },
         {
-            "src":"/backend/ProjectController.php",
+            "src":"controllers/ProjectController.php",
             "dest":"/backend/controllers/ProjectController.php"
         },
         {
-            "src":"/backend/database.php",
+            "src":"config/database.php",
             "dest":"/backend/config/database.php"
         },
         {
-            "src":"/backend/Language.php",
+            "src":"config/Language.php",
             "dest":"/backend/config/Language.php"
         },
         {

@@ -7,7 +7,7 @@
     "routes": [
         {
             "src": "/index.php",
-            "dest": "/index.php"
+            "dest": "index.php"
         },
         {
             "src":"/script.js",
@@ -111,7 +111,7 @@
         },
         {
             "src":"/(.*)",
-            "dest":"/index.php"
+            "dest":"index.php"
         }
 
     ]

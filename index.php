@@ -6,7 +6,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Le reste de ton code...
-require_once 'backend/controllers/GeneralController.php';
+require_once __DIR__ . '/backend/controllers/GeneralController.php';
 
 // Instancie le contrôleur général
 $generalController = new GeneralController();

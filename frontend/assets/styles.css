@@ -21593,6 +21593,10 @@ p {
   --bulma-navbar-item-img-max-height: 133px;
 }
 
+.section {
+  --bulma-section-padding-desktop: 2rem 3rem 1rem;
+}
+
 .illustration-section {
   position: relative;
   width: 100%;
@@ -21606,32 +21610,29 @@ p {
   display: block;
 }
 
-/* Zone cliquable */
+/* Zone cliquable home porte*/
 .door-clickable-area {
   position: absolute;
   left: 45%;
-  /* Ajuster selon la position de la porte */
   top: 57.5%;
-  /* Ajuster selon la position de la porte */
   width: 10%;
-  /* Dimensions adaptées */
   height: 21.5%;
   border-radius: 30%;
   z-index: 10;
   cursor: pointer;
 }
 
-/* Effet halo */
+/* Effet halo home porte*/
 .door-hover-effect {
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 30%;
-  background-color: rgba(255, 223, 0, 0.3);
-  box-shadow: 0 -10px 20px 10px rgba(255, 223, 0, 0.3), -10px 0 20px 10px rgba(255, 223, 0, 0.3), 10px 0 20px 10px rgba(255, 223, 0, 0.3);
-  /* Droite */
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 40px;
+  box-shadow: 0 0 20px 10px rgba(248, 248, 248, 0.4);
   opacity: 0;
   transition: opacity 0.3s ease;
+  pointer-events: none;
   z-index: -1;
 }
 
@@ -21648,7 +21649,6 @@ p {
   height: 100%;
   object-fit: cover;
   display: none;
-  /* Par défaut, les portes sont cachées */
 }
 
 /* Affiche la porte correcte uniquement au survol */
@@ -21683,67 +21683,171 @@ p {
 }
 
 .whoAmI {
-  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 50px;
+}
+
+#pie {
+  height: 500px;
+  width: 500px;
+}
+
+/* GIF de flamme */
+.flame-gif {
+  position: absolute;
+  top: 73%;
+  /* Ajuster selon la position souhaitée */
+  left: 16%;
+  /* Ajuster selon la position souhaitée */
+  transform: translate(-50%, -50%);
+  /* Centrer le GIF */
+  width: 25%;
+  /* Ajuster la taille selon vos besoins */
+  height: 15%;
+  z-index: 10;
+  /* Assurez-vous que le GIF est au-dessus de l'illustration */
 }
 
 /* Zone cliquable about chair */
 .chair-clickable-area {
   position: absolute;
   left: 28%;
-  /* Ajuster selon la position de la porte */
   top: 49.5%;
-  /* Ajuster selon la position de la porte */
-  width: 22%;
-  /* Dimensions adaptées */
+  width: 23%;
   height: 34%;
   z-index: 10;
   cursor: pointer;
 }
 
-/* Pour le mode développement - à retirer en production */
-.chair-clickable-area {
-  border: 2px solid rgba(255, 0, 0, 0.3);
+/* Effet halo about chair */
+.chair-hover-effect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  box-shadow: 0 0 20px 10px rgba(248, 248, 248, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: -1;
 }
 
-/* Zone cliquable about tv */
+.chair-clickable-area:hover .chair-hover-effect {
+  opacity: 1;
+}
+
+/* Images des fauteils */
+.chair-image {
+  position: absolute;
+  top: 0;
+  left: -2%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: none;
+}
+
+/* Affiche le fauteuil correcte uniquement au survol */
+.chair-clickable-area:hover .chair-day.active,
+.chair-clickable-area:hover .chair-night.active {
+  display: block;
+  /* fauteuils de jour ou de nuit au survol */
+}
+
 .tv-clickable-area {
   position: absolute;
-  left: 55%;
-  /* Ajuster selon la position de la porte */
-  top: 48%;
-  /* Ajuster selon la position de la porte */
+  left: 55.5%;
+  top: 47%;
   width: 15%;
-  /* Dimensions adaptées */
-  height: 19%;
+  height: 20%;
   z-index: 10;
   cursor: pointer;
 }
 
-/* Pour le mode développement - à retirer en production */
-.tv-clickable-area {
-  border: 2px solid rgba(255, 0, 0, 0.3);
+.tv-hover-effect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  box-shadow: 0 0 20px 10px rgba(248, 248, 248, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.tv-clickable-area:hover .tv-hover-effect {
+  opacity: 1;
+}
+
+/* Images des tv */
+.tv-image {
+  position: absolute;
+  top: 2%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: none;
+  z-index: 11;
+  /* Assurez-vous que l'image de la TV a un z-index supérieur */
+}
+
+/* Affiche la tv correcte uniquement au survol */
+.tv-clickable-area:hover .tv-day.active,
+.tv-clickable-area:hover .tv-night.active {
+  display: block;
+  /* tv de jour ou de nuit au survol */
 }
 
 /* Zone cliquable about library */
 .library-clickable-area {
   position: absolute;
   left: 71%;
-  /* Ajuster selon la position de la porte */
   top: 22%;
-  /* Ajuster selon la position de la porte */
   width: 22%;
-  /* Dimensions adaptées */
   height: 71%;
   z-index: 10;
   cursor: pointer;
 }
 
-/* Pour le mode développement - à retirer en production */
-.library-clickable-area {
-  border: 2px solid rgba(255, 0, 0, 0.3);
+/* Effet halo about library*/
+.library-hover-effect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  box-shadow: 0 0 20px 10px rgba(248, 248, 248, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.library-clickable-area:hover .library-hover-effect {
+  opacity: 1;
+}
+
+/* Images des bibliothèques*/
+.library-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: none;
+}
+
+/* Affiche la bibliothèque correcte uniquement au survol */
+.library-clickable-area:hover .library-day.active,
+.library-clickable-area:hover .library-night.active {
+  display: block;
+  /* Bibliothèque de jour ou de nuit au survol */
 }
 
 .projects-title {
@@ -22116,6 +22220,10 @@ body.dark-mode a {
   }
   .whoAmI {
     flex-direction: column;
+  }
+  #pie {
+    height: 300px;
+    width: 300px;
   }
   li {
     font-size: 0.8rem;

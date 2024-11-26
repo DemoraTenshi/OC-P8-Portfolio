@@ -15,15 +15,22 @@ document.addEventListener("DOMContentLoaded", function() {
     const toggleSwitch = document.getElementById('darkModeToggle');
     const illustrationWrapper = document.getElementById('illustration-wrapper');
     const logo = document.getElementById('logo');
+    const flameGif = document.querySelector('.flame-gif'); // Sélectionnez le GIF de flamme
 
     if (toggleSwitch) {
-        let lightPicture, darkPicture, doorDay, doorNight;
+        let lightPicture, darkPicture, doorDay, doorNight, chairDay, chairNight, tvDay, tvNight, libraryDay, libraryNight;
 
         if (illustrationWrapper) {
             lightPicture = illustrationWrapper.querySelector('.light-mode-picture');
             darkPicture = illustrationWrapper.querySelector('.dark-mode-picture');
             doorDay = illustrationWrapper.querySelector('.door-day');
             doorNight = illustrationWrapper.querySelector('.door-night');
+            chairDay = illustrationWrapper.querySelector('.chair-day');
+            chairNight = illustrationWrapper.querySelector('.chair-night');
+            tvDay = illustrationWrapper.querySelector('.tv-day');
+            tvNight = illustrationWrapper.querySelector('.tv-night');
+            libraryDay = illustrationWrapper.querySelector('.library-day');
+            libraryNight = illustrationWrapper.querySelector('.library-night');
         }
 
         const applyDarkMode = () => {
@@ -43,6 +50,23 @@ document.addEventListener("DOMContentLoaded", function() {
             if (logo) {
                 logo.src = logo.getAttribute('data-dark-logo');
             }
+
+            if (chairDay && chairNight) {
+                chairDay.classList.remove('active');
+                chairNight.classList.add('active'); // Active la chaise de nuit
+            }
+            if (tvDay && tvNight) {
+                tvDay.classList.remove('active');
+                tvNight.classList.add('active'); // Active la télé de nuit
+            }
+            if (libraryDay && libraryNight) {
+                libraryDay.classList.remove('active');
+                libraryNight.classList.add('active'); // Active la bibliothèque de nuit
+            }
+
+            if (flameGif) {
+                flameGif.style.display = 'block'; // Affiche le GIF de flamme
+            }
         };
 
         const applyLightMode = () => {
@@ -61,6 +85,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
             if (logo) {
                 logo.src = logo.getAttribute('data-light-logo');
+            }
+
+            if (chairDay && chairNight) {
+                chairDay.classList.add('active');
+                chairNight.classList.remove('active'); // Active la chaise de jour
+            }
+
+            if (tvDay && tvNight) {
+                tvDay.classList.add('active');
+                tvNight.classList.remove('active'); // Active la télé de jour
+            }
+
+            if (libraryDay && libraryNight) {
+                libraryDay.classList.add('active');
+                libraryNight.classList.remove('active'); // Active la bibliothèque de jour
+            }
+
+            if (flameGif) {
+                flameGif.style.display = 'none'; // Cache le GIF de flamme
             }
         };
 
@@ -276,6 +319,47 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             })
             .catch(error => console.error("Erreur lors de la récupération des données:", error));
+
+        // Ajouter des gestionnaires d'événements pour les zones cliquables
+        const chairClickableArea = document.querySelector('.chair-clickable-area');
+        const tvClickableArea = document.querySelector('.tv-clickable-area');
+        const recipeSection = document.getElementById('recipe');
+        const recipeText = document.querySelector('.recipe-text');
+        const barChartSection = document.getElementById('bar-chart');
+        const skillsText = document.querySelector('.skills-text');
+
+        if (chairClickableArea) {
+            chairClickableArea.addEventListener('click', function(event) {
+                event.preventDefault();
+                recipeSection.style.display = 'flex';
+                barChartSection.style.display = 'none';
+                recipeText.style.display = 'none';
+                skillsText.style.display = 'block';
+                recipeSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+
+        if (tvClickableArea) {
+            tvClickableArea.addEventListener('click', function(event) {
+                event.preventDefault();
+                barChartSection.style.display = 'block';
+                recipeSection.style.display = 'none';
+                recipeText.style.display = 'block';
+                skillsText.style.display = 'none';
+                barChartSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+
+        // Ajouter un gestionnaire d'événements pour masquer les sections lorsque l'utilisateur clique en dehors de l'illustration
+        document.addEventListener('click', function(event) {
+            const isClickInsideIllustration = illustrationWrapper.contains(event.target);
+            if (!isClickInsideIllustration) {
+                recipeSection.style.display = 'none';
+                barChartSection.style.display = 'none';
+                recipeText.style.display = 'block';
+                skillsText.style.display = 'block';
+            }
+        });
     }
 
     // Contact form validation

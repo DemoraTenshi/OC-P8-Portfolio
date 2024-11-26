@@ -21594,8 +21594,68 @@ p {
 }
 
 .illustration-section {
-  display: flex;
-  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.light-mode-picture img,
+.dark-mode-picture img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Zone cliquable */
+.door-clickable-area {
+  position: absolute;
+  left: 45%;
+  /* Ajuster selon la position de la porte */
+  top: 57.5%;
+  /* Ajuster selon la position de la porte */
+  width: 10%;
+  /* Dimensions adaptées */
+  height: 21.5%;
+  border-radius: 30%;
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* Effet halo */
+.door-hover-effect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 30%;
+  background-color: rgba(255, 223, 0, 0.3);
+  box-shadow: 0 -10px 20px 10px rgba(255, 223, 0, 0.3), -10px 0 20px 10px rgba(255, 223, 0, 0.3), 10px 0 20px 10px rgba(255, 223, 0, 0.3);
+  /* Droite */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.door-clickable-area:hover .door-hover-effect {
+  opacity: 1;
+}
+
+/* Images des portes */
+.door-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  /* Par défaut, les portes sont cachées */
+}
+
+/* Affiche la porte correcte uniquement au survol */
+.door-clickable-area:hover .door-day.active,
+.door-clickable-area:hover .door-night.active {
+  display: block;
+  /* Porte de jour ou de nuit au survol */
 }
 
 .random-facts {

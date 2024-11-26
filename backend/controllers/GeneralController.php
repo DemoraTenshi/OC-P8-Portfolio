@@ -4,7 +4,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-require_once __DIR__ . '/../config/Database.php';
+require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../config/Language.php';
 require_once __DIR__ . '/../controllers/FactController.php';
 require_once __DIR__ . '/../controllers/DataController.php';

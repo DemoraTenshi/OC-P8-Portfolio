@@ -17,11 +17,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const logo = document.getElementById('logo');
 
     if (toggleSwitch) {
-        let lightPicture, darkPicture;
+        let lightPicture, darkPicture, doorDay, doorNight;
 
         if (illustrationWrapper) {
             lightPicture = illustrationWrapper.querySelector('.light-mode-picture');
             darkPicture = illustrationWrapper.querySelector('.dark-mode-picture');
+            doorDay = illustrationWrapper.querySelector('.door-day');
+            doorNight = illustrationWrapper.querySelector('.door-night');
         }
 
         const applyDarkMode = () => {
@@ -32,6 +34,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 lightPicture.style.display = 'none';
                 darkPicture.style.display = 'block';
             }
+
+            if (doorDay && doorNight) {
+                doorDay.classList.remove('active');
+                doorNight.classList.add('active'); // Active la porte de nuit
+            }
+
             if (logo) {
                 logo.src = logo.getAttribute('data-dark-logo');
             }
@@ -45,12 +53,17 @@ document.addEventListener("DOMContentLoaded", function() {
                 lightPicture.style.display = 'block';
                 darkPicture.style.display = 'none';
             }
+
+            if (doorDay && doorNight) {
+                doorDay.classList.add('active');
+                doorNight.classList.remove('active'); // Active la porte de jour
+            }
+
             if (logo) {
                 logo.src = logo.getAttribute('data-light-logo');
             }
         };
 
-        // Initialisation
         if (localStorage.getItem('darkMode') === 'enabled') {
             applyDarkMode();
         } else {

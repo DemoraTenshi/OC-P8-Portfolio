@@ -26,6 +26,8 @@ $layoutTranslations = $translations['layout'];
     <!-- Font Awesome CDN link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.36.0/tsparticles.min.js"></script>
+
     <!-- Styles personnalisés -->
     <link rel="stylesheet" href="frontend/assets/styles.css"> <!-- Remplace .scss par .css après compilation -->
 </head>
@@ -73,8 +75,7 @@ $layoutTranslations = $translations['layout'];
             </div>
         </div>
     </header>
-
-
+    <div id="tsparticles"></div>
     <main class="container">
         <?= $content ?> <!-- Affiche le contenu de la page ici -->
     </main>
@@ -92,7 +93,9 @@ $layoutTranslations = $translations['layout'];
             </div>
         </div>
     </footer>
+
     <!-- Custom JS file link -->
+
     <script src="frontend/script.js"></script> <!-- Ajustez le chemin si nécessaire -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Si vous utilisez Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>

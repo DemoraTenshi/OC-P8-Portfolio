@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const logo = document.getElementById('logo');
     const flameGif = document.querySelector('.flame-gif'); // Sélectionnez le GIF de flamme
 
+    let themeableContainer;
+
     if (toggleSwitch) {
         let lightPicture, darkPicture, doorDay, doorNight, chairDay, chairNight, tvDay, tvNight, libraryDay, libraryNight;
 
@@ -67,6 +69,11 @@ document.addEventListener("DOMContentLoaded", function() {
             if (flameGif) {
                 flameGif.style.display = 'block'; // Affiche le GIF de flamme
             }
+
+            // Appliquer la configuration des particules pour le mode nuit
+            if (themeableContainer) {
+                themeableContainer.loadTheme("dark");
+            }
         };
 
         const applyLightMode = () => {
@@ -105,6 +112,11 @@ document.addEventListener("DOMContentLoaded", function() {
             if (flameGif) {
                 flameGif.style.display = 'none'; // Cache le GIF de flamme
             }
+
+            // Appliquer la configuration des particules pour le mode jour
+            if (themeableContainer) {
+                themeableContainer.loadTheme("light");
+            }
         };
 
         if (localStorage.getItem('darkMode') === 'enabled') {
@@ -119,6 +131,77 @@ document.addEventListener("DOMContentLoaded", function() {
                 applyDarkMode();
             } else {
                 localStorage.setItem('darkMode', 'disabled');
+                applyLightMode();
+            }
+        });
+            // Initialiser les particules
+    tsParticles
+        .load("tsparticles", {
+            fpsLimit: 60,
+            particles: {
+                move: {
+                    bounce: false,
+                    direction: "none",
+                    enable: true,
+                    outModes: "out",
+                    random: false,
+                    speed: 0.5,
+                    straight: false
+                },
+                number: { density: { enable: true, area: 800 }, value: 80 },
+                opacity: {
+                    value: 0.2
+                },
+                shape: {
+                    type: "circle"
+                },
+                size: {
+                    value: { min: 1, max: 3 }
+                }
+            },
+            themes: [
+                {
+                    name: "light",
+                    default: {
+                        value: true,
+                        mode: "light"
+                    },
+                    options: {
+                        background: {
+                            color: "#fff"
+                        },
+                        particles: {
+                            color: {
+                                value: "#000"
+                            }
+                        }
+                    }
+                },
+                {
+                    name: "dark",
+                    default: {
+                        value: true,
+                        mode: "dark"
+                    },
+                    options: {
+                        background: {
+                            color: "#000"
+                        },
+                        particles: {
+                            color: {
+                                value: "#fff"
+                            }
+                        }
+                    }
+                }
+            ]
+        })
+        .then((container) => {
+            themeableContainer = container;
+                // Vérifier le mode actuel dans le stockage local et appliquer le mode nuit si nécessaire
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                applyDarkMode();
+            } else {
                 applyLightMode();
             }
         });
@@ -431,7 +514,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
 
-        // Vérifie si tous les champs obligatoires sont remplis correctement
+        // Vérifier si tous les champs obligatoires sont remplis correctement
         function formIsValid() {
             const nameValid = document.getElementById('name').classList.contains('is-success');
             const emailValid = document.getElementById('email').classList.contains('is-success');
@@ -462,16 +545,20 @@ document.addEventListener("DOMContentLoaded", function() {
         const messageField = document.getElementById('message');
         const submitButton = document.querySelector('button[type="submit"]');
 
-        // Ajout des écouteurs d'événements pour valider les champs à chaque saisie
+        // Ajouter des écouteurs d'événements pour valider les champs à chaque saisie
         [nameField, emailField, messageField].forEach(field => {
             field.addEventListener('input', function () {
                 validateField(field.id);
             });
         });
 
-        // Ajout de l'écouteur pour la soumission du formulaire
+        // Ajouter l'écouteur pour la soumission du formulaire
         if (submitButton) {
             submitButton.addEventListener('click', submitForm); // Soumettre normalement lorsque le bouton est cliqué
         }
     }
+
+
+
+        
 });

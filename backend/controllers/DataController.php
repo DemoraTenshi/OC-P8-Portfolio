@@ -42,6 +42,7 @@ class DataController
         $about_description_1 = $this->translations['about']['about_description_1'];
         $about_description_2 = $this->translations['about']['about_description_2'];
         $recipe_title = $this->translations['about']['recipe-title'];
+        $recipe_paragraphe = $this->translations['about']['recipe-paragraphe'];
         $instructions = $this->translations['about']['instructions'];
         $coder = $this->translations['about']['coder'];
         $coder_instruction_1 = $this->translations['about']['coder_instruction_1'];
@@ -62,6 +63,7 @@ class DataController
         $storage = $this->translations['about']['storage'];
         $storage_1 = $this->translations['about']['storage_1'];
         $skills = $this->translations['about']['skills'];
+        $skills_2 = $this->translations['about']['skills_2'];
         $my_work = $this->translations['about']['my-work'];
         $my_work_1 = $this->translations['about']['my-work_1'];
 

@@ -148,6 +148,63 @@ p {
     gap: 20px;
 }
 
+/* Zone cliquable about chair */
+.chair-clickable-area {
+    position: absolute;
+    left: 28%;
+    /* Ajuster selon la position de la porte */
+    top: 49.5%;
+    /* Ajuster selon la position de la porte */
+    width: 22%;
+    /* Dimensions adaptées */
+    height: 34%;
+    z-index: 10;
+    cursor: pointer;
+}
+
+/* Pour le mode développement - à retirer en production */
+.chair-clickable-area {
+    border: 2px solid rgba(255, 0, 0, 0.3);
+}
+
+/* Zone cliquable about tv */
+.tv-clickable-area {
+    position: absolute;
+    left: 55%;
+    /* Ajuster selon la position de la porte */
+    top: 48%;
+    /* Ajuster selon la position de la porte */
+    width: 15%;
+    /* Dimensions adaptées */
+    height: 19%;
+    z-index: 10;
+    cursor: pointer;
+}
+
+/* Pour le mode développement - à retirer en production */
+.tv-clickable-area {
+    border: 2px solid rgba(255, 0, 0, 0.3);
+}
+
+/* Zone cliquable about library */
+.library-clickable-area {
+    position: absolute;
+    left: 71%;
+    /* Ajuster selon la position de la porte */
+    top: 22%;
+    /* Ajuster selon la position de la porte */
+    width: 22%;
+    /* Dimensions adaptées */
+    height: 71%;
+    z-index: 10;
+    cursor: pointer;
+}
+
+/* Pour le mode développement - à retirer en production */
+.library-clickable-area {
+    border: 2px solid rgba(255, 0, 0, 0.3);
+}
+
 .projects-title {
     padding: 1em;
 }

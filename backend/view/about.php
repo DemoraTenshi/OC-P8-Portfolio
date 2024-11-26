@@ -13,7 +13,8 @@ $title = "About";
     </section>
     <section class="section">
         <h2 class="title is-3"><?php echo $recipe_title; ?></h2>
-        <div class="whoAmI">
+        <p><?php echo $recipe_paragraphe; ?></p>
+        <div class="whoAmI" id="recipe" style="display: none;">
             <div class="chart-container" id="pie" style="position: relative;">
                 <canvas id="pieChart"></canvas>
             </div>
@@ -58,7 +59,8 @@ $title = "About";
     </section>
     <section class="section">
         <h2 class="title is-3"><?php echo $skills; ?></h2>
-        <div class="chart-container" style="position: relative; height:50vh;">
+        <p><?php echo $skills_2; ?></p>
+        <div class="chart-container" id="bar-chart" style="position: relative; height:50vh; display:none;">
             <canvas id="barChart"></canvas>
         </div>
     </section>
@@ -74,6 +76,22 @@ $title = "About";
             <picture class="dark-mode-picture" style="display: none;">
                 <img src="frontend/assets/images/nuit.png" alt="Illustration">
             </picture>
+            <!-- zone cliquable recipe-->
+            <a href="#recipe" class="chair-clickable-area" aria-label="Accéder à la page Projets">
+                <img src="frontend/assets/images/FauteuilseulJour.png" alt="Fauteuil jour" class="chair-image chair-day">
+                <img src="frontend/assets/images/Fauteuilseulnuit.png" alt="Fauteuil jour" class="chair-image chair-night">
+            </a>
+
+            <!-- zone cliquable skills-->
+            <a href="#bar-chart" class="tv-clickable-area" aria-label="Accéder à la page Projets">
+                <img src="frontend/assets/images/TVseulejour.png" alt="TV jour" class="tv-image tv-day">
+                <img src="frontend/assets/images/TVseulenuit.png" alt="TV nuit" class="tv-image tv-night">
+            </a>
+            <!-- zone cliquable projects-->
+            <a href="index.php?page=projects" class="library-clickable-area" aria-label="Accéder à la page Projets">
+                <img src="frontend/assets/images/Etagereseulejour.png" alt="Bibliothèque jour" class="library-image library-day">
+                <img src="frontend/assets/images/Etagereseulenuit.png" alt="Bibliothèque nuit" class="library-image library-night">
+            </a>
 
         </div>
     </section>

@@ -21730,6 +21730,34 @@ p {
   /* Assurez-vous que le GIF est au-dessus de l'illustration */
 }
 
+.rain-night-gif {
+  position: absolute;
+  top: 33%;
+  /* Ajuster selon la position souhaitée */
+  left: 32%;
+  /* Ajuster selon la position souhaitée */
+  transform: translate(-50%, -50%);
+  /* Centrer le GIF */
+  width: 15%;
+  /* Ajuster la taille selon vos besoins */
+  height: 36.2%;
+  z-index: -1;
+}
+
+.rain-day-gif {
+  position: absolute;
+  top: 33%;
+  /* Ajuster selon la position souhaitée */
+  left: 30%;
+  /* Ajuster selon la position souhaitée */
+  transform: translate(-50%, -50%);
+  /* Centrer le GIF */
+  width: 15%;
+  /* Ajuster la taille selon vos besoins */
+  height: 36.2%;
+  z-index: -1;
+}
+
 /* Zone cliquable about chair */
 .chair-clickable-area {
   position: absolute;

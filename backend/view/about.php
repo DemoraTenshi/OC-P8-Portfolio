@@ -69,8 +69,12 @@ $title = "About";
             <picture class="dark-mode-picture" style="display: none;">
                 <img src="frontend/assets/images/nuit.png" alt="Illustration">
             </picture>
-            <!--gif fireplaace-->
+            <!--gif fireplace-->
             <img src="frontend/assets/images/flamme.gif" alt="flamme" class="flame-gif" style="display: none;">
+            <!--gif rain day-->
+            <img src="frontend/assets/images/pluie_jour.gif" alt="rain day" class="rain-day-gif" style="display: none;">
+            <!--gif rain night-->
+            <img src="frontend/assets/images/pluie_nuit.gif" alt="rain night" class="rain-night-gif" style="display: none;">
             <!-- zone cliquable recipe-->
             <a href="#recipe" class="chair-clickable-area" aria-label="Accéder à la page Projets">
                 <span class="chair-hover-effect"></span>

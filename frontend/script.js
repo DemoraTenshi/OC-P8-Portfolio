@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const illustrationWrapper = document.getElementById('illustration-wrapper');
     const logo = document.getElementById('logo');
     const flameGif = document.querySelector('.flame-gif'); // Sélectionnez le GIF de flamme
+    const rainDay = document.querySelector('.rain-day-gif'); // Sélectionnez le GIF de pluie
+    const rainNight = document.querySelector('.rain-night-gif'); // Sélectionnez le GIF de pluie
 
     let themeableContainer;
 
@@ -70,6 +72,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 flameGif.style.display = 'block'; // Affiche le GIF de flamme
             }
 
+            if (rainDay && rainNight) {
+                rainDay.style.display = 'none'; 
+                rainNight.style.display = 'block'; // Affiche le GIF de pluie
+            }
+
             // Appliquer la configuration des particules pour le mode nuit
             if (themeableContainer) {
                 themeableContainer.loadTheme("dark");
@@ -113,6 +120,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 flameGif.style.display = 'none'; // Cache le GIF de flamme
             }
 
+            if (rainDay && rainNight) {
+                rainDay.style.display = 'block'; 
+                rainNight.style.display = 'none'; // Affiche le GIF de pluie
+            }
             // Appliquer la configuration des particules pour le mode jour
             if (themeableContainer) {
                 themeableContainer.loadTheme("light");

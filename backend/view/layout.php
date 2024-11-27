@@ -21,7 +21,7 @@ $layoutTranslations = $translations['layout'];
     <title>Portfolio</title>
 
     <!-- Bulma CSS -->
-    <link rel="stylesheet" href="frontend/node_modules/bulma/css/bulma.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
 
     <!-- Font Awesome CDN link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">

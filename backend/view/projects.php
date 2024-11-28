@@ -10,14 +10,14 @@
         <div id="illustration-wrapper">
             <!-- Image mode clair -->
             <picture class="light-mode-picture">
-                <source media="(max-width: 943px)" srcset="frontend/assets/images/etageresansfondMobile.png">
-                <img src="frontend/assets/images/etageresansfond.png" alt="Illustration">
+                <source media="(max-width: 943px)" srcset="frontend/assets/images/etageresansfondMobile.webp">
+                <img src="frontend/assets/images/etageresansfond.webp" alt="Illustration">
             </picture>
 
             <!-- Image mode sombre -->
             <picture class="dark-mode-picture" style="display: none;">
-                <source media="(max-width: 943px)" srcset="frontend/assets/images/etagerenuitMobile.png">
-                <img src="frontend/assets/images/etagerenuit.png" alt="Illustration">
+                <source media="(max-width: 943px)" srcset="frontend/assets/images/etagerenuitMobile.webp">
+                <img src="frontend/assets/images/etagerenuit.webp" alt="Illustration">
             </picture>
         </div>
 

@@ -18,7 +18,38 @@ $layoutTranslations = $translations['layout'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>DemoRaccoon Portfolio</title>
+    <meta name="Content-Type" content="UTF-8">
+    <meta name="Content-Language" content="fr">
+    <meta name="Description" content="Hi! I'm Cécile, passionate web developer, inveterate gamer, and compulsive reader, based in France. Between virtual quests and stacks of books, I transform lines of code into fluid, innovative web experiences. Dive into my world and discover how I combine creativity and rigor to bring your projects to life! / Salut ! Je suis Cécile, développeuse web passionnée, joueuse invétérée et lectrice compulsive, basée en France. Entre quêtes virtuelles et piles de livres, je transforme des lignes de code en expériences web fluides et innovantes. Plongez dans mon univers et découvrez comment je combine créativité et rigueur pour donner vie à vos projets !">
+    <meta name="Keywords" content="web development, programmer, skills, HTML, CSS, JavaScript, PHP, programming, French, English, frontend, backend, database, MySQL, server,  ">
+    <meta name="Subject" content="Programmer Portfolio">
+    <meta name="Author" content="Cecile Demora">
+    <meta name="Identifier-Url" content="cecile-demora.fr">
+    <meta name="Revisit-After" content="15 days">
+    <meta name="Robots" content="all">
+    <meta name="Rating" content="general">
+    <meta name="Distribution" content="global">
+    <meta name="Geography" content="France">
+    <meta name="Category" content="internet">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:url" content="http://cecile-demora.fr">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="DemoRaccoon Portfolio">
+    <meta property="og:description" content="Salut ! Je suis Cécile, dév web passionnée, joueuse invétérée et lectrice compulsive, je transforme des lignes de code en expériences web fluides et fun.">
+    <meta property="og:image" content="https://cecile-demora.fr/frontend/assets/logo/LogoCecileBlack.webp">
+    <meta property="og:image:width" content="255">
+    <meta property="og:image:height" content="133">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="cecile-demora.fr">
+    <meta property="twitter:url" content="http://cecile-demora.fr">
+    <meta name="twitter:title" content="DemoRaccoon Portfolio">
+    <meta name="twitter:description" content="Salut ! Je suis Cécile, dév web passionnée, joueuse invétérée et lectrice compulsive, je transforme des lignes de code en expériences web fluides et fun.">
+    <meta name="twitter:image" content="https://cecile-demora.fr/frontend/assets/logo/LogoCecileBlack.webp">
+
 
     <!-- Bulma CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
@@ -30,19 +61,20 @@ $layoutTranslations = $translations['layout'];
 
     <!-- Styles personnalisés -->
     <link rel="stylesheet" href="frontend/assets/styles.css"> <!-- Remplace .scss par .css après compilation -->
+    <link rel="icon" type="image/png" href="frontend/assets/icons/favicon.ico">
 </head>
 
 <body>
-    <header class="navbar is-primary" style="width: 100%;">
+    <header class="navbar" style="width: 100%;">
         <div class="container-fluid p-0" style="width: 100%;">
             <div class="navbar is-flex is-justify-content-space-between is-align-items-center pr-4">
                 <div class="navbar-brand ml-0 pl-0">
                     <a href="index.php?page=home" class="navbar-item p-0 ml-0">
                         <img id="logo"
 
-                            data-light-logo="frontend/assets/logo/LogoCecileBlack.png"
-                            data-dark-logo="frontend/assets/logo/LogoCecileBlanc.png"
-                            src="frontend/assets/logo/LogoCecileBlack.png"
+                            data-light-logo="frontend/assets/logo/LogoCecileBlack.webp"
+                            data-dark-logo="frontend/assets/logo/LogoCecileBlanc.webp"
+                            src="frontend/assets/logo/LogoCecileBlack.webp"
                             alt="Demoracoon Pawfolio">
                     </a>
                 </div>

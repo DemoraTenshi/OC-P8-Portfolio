@@ -21584,8 +21584,31 @@ has-background-danger.is-hoverable:active {
 
 h1,
 h2,
+li,
 p {
   text-align: center;
+  color: hsl(221, 14%, 21%);
+}
+
+header {
+  background: var(--light-gradient);
+}
+
+.content h1,
+.title.is-1,
+.title.is-2,
+.title.is-3,
+.title.is-4 {
+  color: hsl(221, 14%, 21%);
+}
+
+.navbar-item {
+  color: hsl(221, 14%, 29%);
+  border-radius: 1rem;
+}
+
+a.navbar-item:hover {
+  background-color: hsl(221, 14%, 85%);
 }
 
 .container-fluid {
@@ -21901,6 +21924,7 @@ p {
 
 .projects-title {
   padding: 1em;
+  color: hsl(221, 14%, 21%);
 }
 
 .project-illustration-section {
@@ -21947,11 +21971,22 @@ p {
   pointer-events: none;
 }
 
+.modal-card-title {
+  color: hsl(221, 14%, 21%);
+}
+
+.modal-card-head,
+.modal-card-body,
+.modal-card-foot {
+  background-color: hsl(221, 14%, 100%);
+}
+
 footer {
   background: var(--light-gradient);
 }
 
 .footer {
+  background: var(--light-gradient);
   --bulma-footer-padding: 3rem 1.5rem;
   margin-top: 130px;
 }
@@ -22044,7 +22079,9 @@ body.dark-mode .navbar {
   background: var(--dark-gradient);
 }
 
-body.dark-mode footer {
+body.dark-mode footer,
+body.dark-mode header,
+body.dark-mode .footer {
   background: var(--dark-gradient);
 }
 
@@ -22125,10 +22162,15 @@ body.dark-mode .textarea::placeholder {
 }
 
 body.dark-mode .header,
+body.dark-mode .title.is-1,
+body.dark-mode .title.is-2,
+body.dark-mode .title.is-3,
+body.dark-mode .title.is-4,
 body.dark-mode footer,
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode p,
+body.dark-mode li,
 body.dark-mode a {
   color: var(--dark-text);
 }

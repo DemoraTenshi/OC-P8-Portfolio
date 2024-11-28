@@ -62,12 +62,12 @@ $title = "About";
     <section>
         <div class="illustration-section" id="illustration-wrapper">
             <picture class="light-mode-picture">
-                <img src="frontend/assets/images/Jour.png" alt="Illustration">
+                <img src="frontend/assets/images/Jour.webp" alt="Illustration">
             </picture>
 
             <!-- Image mode sombre -->
             <picture class="dark-mode-picture" style="display: none;">
-                <img src="frontend/assets/images/nuit.png" alt="Illustration">
+                <img src="frontend/assets/images/nuit.webp" alt="Illustration">
             </picture>
             <!--gif fireplace-->
             <img src="frontend/assets/images/flamme.gif" alt="flamme" class="flame-gif" style="display: none;">
@@ -78,21 +78,21 @@ $title = "About";
             <!-- zone cliquable recipe-->
             <a href="#recipe" class="chair-clickable-area" aria-label="Accéder à la page Projets">
                 <span class="chair-hover-effect"></span>
-                <img src="frontend/assets/images/FauteuilseulJour.png" alt="Fauteuil jour" class="chair-image chair-day">
-                <img src="frontend/assets/images/Fauteuilseulnuit.png" alt="Fauteuil nuit" class="chair-image chair-night">
+                <img src="frontend/assets/images/FauteuilseulJour.webp" alt="Fauteuil jour" class="chair-image chair-day">
+                <img src="frontend/assets/images/Fauteuilseulnuit.webp" alt="Fauteuil nuit" class="chair-image chair-night">
             </a>
 
             <!-- zone cliquable skills-->
             <a href="#bar-chart" class="tv-clickable-area" aria-label="Accéder à la page Projets">
                 <span class="tv-hover-effect"></span>
-                <img src="frontend/assets/images/TVseulejour.png" alt="TV jour" class="tv-image tv-day">
-                <img src="frontend/assets/images/TVseulenuit.png" alt="TV nuit" class="tv-image tv-night">
+                <img src="frontend/assets/images/TVseulejour.webp" alt="TV jour" class="tv-image tv-day">
+                <img src="frontend/assets/images/TVseulenuit.webp" alt="TV nuit" class="tv-image tv-night">
             </a>
             <!-- zone cliquable projects-->
             <a href="index.php?page=projects" class="library-clickable-area" aria-label="Accéder à la page Projets">
                 <span class="library-hover-effect"></span>
-                <img src="frontend/assets/images/Etagereseulejour.png" alt="Bibliothèque jour" class="library-image library-day">
-                <img src="frontend/assets/images/Etagereseulenuit.png" alt="Bibliothèque nuit" class="library-image library-night">
+                <img src="frontend/assets/images/Etagereseulejour.webp" alt="Bibliothèque jour" class="library-image library-day">
+                <img src="frontend/assets/images/Etagereseulenuit.webp" alt="Bibliothèque nuit" class="library-image library-night">
             </a>
 
         </div>

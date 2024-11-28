@@ -53,7 +53,7 @@ class ProjectModel
         $params = http_build_query(array(
             "access_key" => $access_key,
             "url" => $url,
-            "format" => "jpeg", // Format de l'image
+            "format" => "webp", // Format de l'image
             "width" => 1280, // Largeur de l'image
             "height" => 720, // Hauteur de l'image
         ));
@@ -64,7 +64,7 @@ class ProjectModel
             return null; // Retourne null si la capture d'écran échoue
         }
 
-        $screenshot_path = __DIR__ . '/../../frontend/assets/images/screenshot_' . md5($url) . ".jpeg";
+        $screenshot_path = __DIR__ . '/../../frontend/assets/images/screenshot_' . md5($url) . ".webp";
         $screenshot_dir = dirname($screenshot_path);
 
         // Créer le dossier s'il n'existe pas
@@ -74,6 +74,6 @@ class ProjectModel
 
         file_put_contents($screenshot_path, $image_data);
 
-        return 'http://localhost/tests/OC-P8-Portfolio/frontend/assets/images/screenshot_' . md5($url) . ".jpeg";
+        return 'http://localhost/tests/OC-P8-Portfolio/frontend/assets/images/screenshot_' . md5($url) . ".webp";
     }
 }

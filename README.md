@@ -1,4 +1,4 @@
-![DemoRaccoon logo](frontend/assets/images/logo/LogoCecileBLanc.webp)
+![DemoRaccoon logo](/frontend/assets/logo/LogoCecileBlanc.webp)
 
 # DemoRaccoon Portfolio
 Bienvenue dans le dépôt GitHub de mon portfolio en tant que développeur web. Découvrez mon univers.

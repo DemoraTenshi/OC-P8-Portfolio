@@ -245,6 +245,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    //display projects from GitHub API in modal
     if (currentPage === 'projects') {
         console.log('On projects page');
 
@@ -252,33 +253,36 @@ document.addEventListener("DOMContentLoaded", function() {
         const modalBackground = document.querySelector('.modal-background');
         const modalTitle = document.getElementById('modal-title');
         const modalDescription = document.getElementById('modal-description');
+        const modalBadges = document.getElementById('modal-badges');
         const modalGithub = document.getElementById('modal-github');
         const modalDeployment = document.getElementById('modal-deployment');
         const modalScreenshot = document.getElementById('modal-screenshot');
         const closeModalButtons = document.querySelectorAll('.delete, .modal-close');
+        const modalPrevButton = document.getElementById('modal-prev');
+        const modalNextButton = document.getElementById('modal-next');
 
         const projectCards = document.querySelectorAll('.project-card');
         console.log('Found project cards:', projectCards.length);
 
-        projectCards.forEach(card => {
+        let currentIndex = 0;
+
+        projectCards.forEach((card, index) => {
             card.addEventListener('click', function() {
                 console.log('Card clicked');
-
-                modalTitle.textContent = this.getAttribute('data-title');
-                modalDescription.textContent = this.getAttribute('data-description');
-                modalGithub.href = this.getAttribute('data-github');
-                modalDeployment.href = this.getAttribute('data-deployment');
-
-                const screenshotSrc = this.getAttribute('data-screenshot');
-                if (screenshotSrc) {
-                    modalScreenshot.src = screenshotSrc;
-                    modalScreenshot.style.display = 'block';
-                } else {
-                    modalScreenshot.style.display = 'none';
-                }
-
+                currentIndex = index;
+                updateModalContent(currentIndex);
                 modal.classList.add('is-active');
             });
+        });
+
+        modalPrevButton.addEventListener('click', function() {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : projectCards.length - 1;
+            updateModalContent(currentIndex);
+        });
+
+        modalNextButton.addEventListener('click', function() {
+            currentIndex = (currentIndex < projectCards.length - 1) ? currentIndex + 1 : 0;
+            updateModalContent(currentIndex);
         });
 
         closeModalButtons.forEach(button => {
@@ -290,7 +294,27 @@ document.addEventListener("DOMContentLoaded", function() {
         modalBackground.addEventListener('click', function() {
             modal.classList.remove('is-active');
         });
+
+        function updateModalContent(index) {
+            const card = projectCards[index];
+            modalTitle.textContent = card.getAttribute('data-title');
+            modalDescription.textContent = card.getAttribute('data-description');
+            modalGithub.href = card.getAttribute('data-github');
+            modalDeployment.href = card.getAttribute('data-deployment');
+
+            const screenshotSrc = card.getAttribute('data-screenshot');
+            if (screenshotSrc) {
+                modalScreenshot.src = screenshotSrc;
+                modalScreenshot.style.display = 'block';
+            } else {
+                modalScreenshot.style.display = 'none';
+            }
+
+            const badges = card.getAttribute('data-badges').split(',');
+            modalBadges.innerHTML = badges.map(badge => `<img src="${badge}" alt="Badge" style="margin-right: 5px;">`).join('');
+        }
     }
+
 
     if (currentPage === 'about') {
         let barChart;

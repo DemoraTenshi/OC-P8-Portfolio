@@ -60,7 +60,7 @@ $layoutTranslations = $translations['layout'];
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.36.0/tsparticles.min.js"></script>
 
     <!-- Styles personnalisés -->
-    <link rel="stylesheet" href="frontend/assets/styles.css"> <!-- Remplace .scss par .css après compilation -->
+    <link rel="stylesheet" href="frontend/assets/styles.min.css"> <!-- Remplace .scss par .css après compilation -->
     <link rel="icon" type="image/png" href="frontend/assets/icons/favicon.ico">
 </head>
 

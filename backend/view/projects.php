@@ -23,13 +23,15 @@
 
         <div class="project-gallery">
             <?php if (isset($githubProjects) && !empty($githubProjects) && is_array($githubProjects)) : ?>
-                <?php foreach ($githubProjects as $project): ?>
+                <?php foreach ($githubProjects as $index => $project): ?>
                     <div class="project-card"
+                        data-index="<?= $index ?>"
                         data-title="<?= htmlspecialchars($project['name']) ?>"
                         data-description="<?= htmlspecialchars($project['description'] ?? 'Aucune description') ?>"
                         data-github="<?= htmlspecialchars($project['html_url'] ?? '#') ?>"
                         data-deployment="<?= htmlspecialchars($project['homepage'] ?? $project['html_url']) ?>"
-                        data-screenshot="<?= isset($project['screenshot']) ? $project['screenshot'] : '' ?>">
+                        data-screenshot="<?= isset($project['screenshot']) ? $project['screenshot'] : '' ?>"
+                        data-badges="<?= htmlspecialchars(implode(',', $project['badges'])) ?>">
                         <h1 class="project-title"><?= htmlspecialchars($project['name']) ?></h1>
                     </div>
                 <?php endforeach; ?>
@@ -49,19 +51,28 @@
             </header>
             <section class="modal-card-body">
                 <p id="modal-description">Description du projet</p>
+                <div id="modal-badges"></div>
             </section>
             <section class="modal-card-body">
                 <img id="modal-screenshot" src="" alt="Screenshot du projet" style="display: none;" />
             </section>
             <section class="modal-card-body">
-                <a id="modal-github" href="#" target="_blank">
-                    <i class="fa-solid fa-code"></i>
-                </a>
-                <a id="modal-deployment" href="#" target="_blank">
-                    <i class="fa-solid fa-desktop"></i>
-                </a>
+                <div class="modal-link">
+                    <a id="modal-github" href="#" target="_blank">
+                        <i class="fa-solid fa-code"></i>
+                    </a>
+                    <a id="modal-deployment" href="#" target="_blank">
+                        <i class="fa-solid fa-desktop"></i>
+                    </a>
+                </div>
             </section>
             <footer class="modal-card-foot">
+                <button id="modal-prev" class="button is-light">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="modal-next" class="button is-light">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
             </footer>
         </div>
     </div>

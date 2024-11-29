@@ -20,7 +20,7 @@
     --bulma-danger-h: 360deg;
     --bulma-danger-s: 87%;
     --bulma-danger-l: 58%;
-    --bulma-navbar-item-img-max-height: 133px;
+    --bulma-navbar-item-img-max-height: 95px;
     --bulma-footer-padding: 3rem 1.5rem;
     --light-gradient: linear-gradient(135deg, rgba(211, 198, 245, 0.5) 0%, rgba(255, 191, 203, 0.5) 50%, rgba(190, 153, 199, 0.5) 100%);
     --dark-gradient: linear-gradient(225deg, rgba(26, 36, 73, 1) 0%, rgba(53, 70, 90, 1) 50%, rgba(50, 68, 81, 1) 100%);
@@ -71,7 +71,7 @@ a.navbar-item:hover{
 
 .navbar {
     background: var(--light-gradient);
-    --bulma-navbar-item-img-max-height: 133px;
+    --bulma-navbar-item-img-max-height: 95px;
 }
 #tsparticles {
     position: fixed;
@@ -418,15 +418,39 @@ a.navbar-item:hover{
     margin: 0;
     pointer-events: none;
 }
+
+
 .modal-card-title{
     color: hsl(221deg, 14%, 21%);
 }
+
+#modal-badges{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.modal-link{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.modal-card-body{
+    overflow: hidden;
+}
+
 .modal-card-head,
 .modal-card-body,
 .modal-card-foot {
-    background-color: hsl(221deg, 14%, 100%)
+    background-color: hsl(221deg, 14%, 100%);
+    padding: 0.8rem;
 }
 
+.modal-card-foot{
+    display: flex;
+    justify-content: space-between;
+}
 
 footer {
     background: var(--light-gradient);

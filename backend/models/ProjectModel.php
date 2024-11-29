@@ -25,7 +25,7 @@ class ProjectModel
         $projects = json_decode($response, true);
 
         if (!empty($projects) && is_array($projects)) {
-            // Ajouter les screenshots aux projets
+            // Ajouter les screenshots et les badges aux projets
             foreach ($projects as &$project) {
                 if (isset($project['homepage']) && !empty($project['homepage'])) {
                     // Si une URL de déploiement existe, tente d'obtenir un screenshot
@@ -34,6 +34,11 @@ class ProjectModel
                     // Aucune URL de déploiement, aucun screenshot
                     $project['screenshot'] = null;
                 }
+
+                // Ajouter les badges au projet
+                $project['badges'] = $this->getBadgesFromReadme($project['full_name']);
+                // Log pour vérifier les badges extraits
+                error_log('Badges for ' . $project['name'] . ': ' . implode(', ', $project['badges']));
             }
             return $projects; // Retourne la liste des dépôts
         } else {
@@ -75,5 +80,35 @@ class ProjectModel
         file_put_contents($screenshot_path, $image_data);
 
         return 'http://localhost/tests/OC-P8-Portfolio/frontend/assets/images/screenshot_' . md5($url) . ".webp";
+    }
+
+    // Méthode pour récupérer les badges depuis le README
+    private function getBadgesFromReadme($repoFullName)
+    {
+        $url = "https://raw.githubusercontent.com/$repoFullName/main/README.md";
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_USERAGENT, 'Your-App-Name'); // Nécessaire pour l'API GitHub
+
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        if (!$response) {
+            return [];
+        }
+
+        // Log pour vérifier le contenu du README
+        error_log('README content for ' . $repoFullName . ': ' . $response);
+
+        // Utiliser une expression régulière pour extraire les badges
+        $pattern = '/!\[image\]\((https:\/\/img\.shields\.io\/badge\/[^\)]+)\)/';
+        preg_match_all($pattern, $response, $matches);
+
+        // Log pour vérifier les badges extraits
+        error_log('Extracted badges for ' . $repoFullName . ': ' . implode(', ', $matches[1] ?? []));
+
+        return $matches[1] ?? [];
     }
 }

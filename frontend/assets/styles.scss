@@ -204,6 +204,21 @@ a.navbar-item:hover{
     /* Assurez-vous que le GIF est au-dessus de l'illustration */
 }
 
+.kirby-gif {
+    position: absolute;
+    top: 56.8%;
+    /* Ajuster selon la position souhaitée */
+    left: 50%;
+    /* Ajuster selon la position souhaitée */
+    transform: translate(50%, -50%) rotate(20deg);
+    /* Centrer le GIF */
+    width: 12%;
+    /* Ajuster la taille selon vos besoins */
+    height: 9%;
+    z-index: -1;
+    /* Assurez-vous que le GIF est au-dessus de l'illustration */
+}
+
 .rain-night-gif {
     position: absolute;
     top: 33%;
@@ -471,6 +486,7 @@ footer .follow {
     width: 110px;
     height: 50px;
     display: inline-block;
+    order: 2;
 }
 
 .toggle-switch input[type="checkbox"] {
@@ -727,6 +743,10 @@ body.dark-mode a {
         background: var(--light-gradient);
         display: none;
         /* Masquer le menu par défaut */
+    }
+    
+    body.dark-mode .navbar-menu {
+        background: var(--dark-gradient);
     }
     
     .navbar-menu.is-active {

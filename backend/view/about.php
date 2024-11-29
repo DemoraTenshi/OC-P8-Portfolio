@@ -71,6 +71,8 @@ $title = "About";
             </picture>
             <!--gif fireplace-->
             <img src="frontend/assets/images/flamme.gif" alt="flamme" class="flame-gif" style="display: none;">
+            <!--gif kirby-->
+            <img src="frontend/assets/images/kirby.gif" alt="kirby" class="kirby-gif" style="display: none;">
             <!--gif rain day-->
             <img src="frontend/assets/images/pluie_jour.gif" alt="rain day" class="rain-day-gif" style="display: none;">
             <!--gif rain night-->

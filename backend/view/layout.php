@@ -71,7 +71,6 @@ $layoutTranslations = $translations['layout'];
                 <div class="navbar-brand ml-0 pl-0">
                     <a href="index.php?page=home" class="navbar-item p-0 ml-0">
                         <img id="logo"
-
                             data-light-logo="frontend/assets/logo/LogoCecileBlack.webp"
                             data-dark-logo="frontend/assets/logo/LogoCecileBlanc.webp"
                             src="frontend/assets/logo/LogoCecileBlack.webp"
@@ -79,23 +78,20 @@ $layoutTranslations = $translations['layout'];
                     </a>
                 </div>
                 <div class="navbar-end">
+                    <div id="navMenu" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a href="index.php?page=home" class="navbar-item" id="home-link"><?php echo $layoutTranslations['home']; ?></a>
+                            <a href="index.php?page=about" class="navbar-item" id="about-link"><?php echo $layoutTranslations['about']; ?></a>
+                            <a href="index.php?page=projects" class="navbar-item" id="projects-link"><?php echo $layoutTranslations['Projects']; ?></a>
+                            <a href="index.php?page=contact" class="navbar-item" id="contact-link"><?php echo $layoutTranslations['Contact']; ?></a>
+                        </div>
+                    </div>
                     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                     </a>
-                </div>
-                <div id="navMenu" class="navbar-menu">
-                    <div class="navbar-end">
-                        <a href="index.php?page=home" class="navbar-item" id="home-link"><?php echo $layoutTranslations['home']; ?></a>
-                        <a href="index.php?page=about" class="navbar-item" id="about-link"><?php echo $layoutTranslations['about']; ?></a>
-                        <a href="index.php?page=projects" class="navbar-item" id="projects-link"><?php echo $layoutTranslations['Projects']; ?></a>
-                        <a href="index.php?page=contact" class="navbar-item" id="contact-link"><?php echo $layoutTranslations['Contact']; ?></a>
-                    </div>
-                </div>
-
-                <div class="navbar-end">
                     <label class="toggle-switch navbar-item">
                         <input type="checkbox" id="darkModeToggle">
                         <span class="slider">
@@ -107,6 +103,9 @@ $layoutTranslations = $translations['layout'];
             </div>
         </div>
     </header>
+
+
+
     <div id="tsparticles"></div>
     <main class="container">
         <?= $content ?> <!-- Affiche le contenu de la page ici -->

@@ -12,10 +12,12 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+
     const toggleSwitch = document.getElementById('darkModeToggle');
     const illustrationWrapper = document.getElementById('illustration-wrapper');
     const logo = document.getElementById('logo');
     const flameGif = document.querySelector('.flame-gif');
+     const kirbyGif = document.querySelector('.kirby-gif');
     const rainDay = document.querySelector('.rain-day-gif');
     const rainNight = document.querySelector('.rain-night-gif');
 
@@ -72,6 +74,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 flameGif.style.display = 'block';
             }
 
+            if (kirbyGif) {
+                kirbyGif.style.display = 'block';
+            }
+
             if (rainDay && rainNight) {
                 rainDay.style.display = 'none';
                 rainNight.style.display = 'block';
@@ -117,6 +123,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
             if (flameGif) {
                 flameGif.style.display = 'none';
+            }
+
+            if (kirbyGif) {
+                kirbyGif.style.display = 'block';
             }
 
             if (rainDay && rainNight) {

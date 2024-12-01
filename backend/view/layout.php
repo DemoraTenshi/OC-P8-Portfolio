@@ -115,19 +115,41 @@ $layoutTranslations = $translations['layout'];
         <div class="content has-text-centered">
             <div class="follow">
                 <a href="frontend/files/Cécile_Pecquerie_CV.pdf" download="Cécile_Pecquerie_CV" class="fa-solid fa-download" target="_blank" rel="noopener noreferrer"></a>
-                <a href="https://www.linkedin.com/in/cécile-pecquerie-05b58797/" class="fab fa-linkedin" target="_blank" rel="noopener noreferrer"></a>
-                <a href="#" class="fab fa-instagram"></a>
+                <a href="https://www.linkedin.com/in/cécile-pecquerie-05b58797" class="fab fa-linkedin" target="_blank" rel="noopener noreferrer"></a>
+                <a href="https://www.instagram.com/demora45/" class="fab fa-instagram"></a>
                 <a href="https://github.com/DemoraTenshi" class="fab fa-github" target="_blank" rel="noopener noreferrer"></a>
             </div>
-            <div class="credits">
-                <!-- Ajoutez vos crédits ici -->
+            <div class="language">
+                <p class="lang"><?php echo $layoutTranslations['Language']; ?></p>
             </div>
         </div>
+        <div class="legal">
+            © <?php echo date("Y"); ?> Made with ❤️ by Cécile Pecquerie. All rights reserved.
+            <a href="https://www.iubenda.com/privacy-policy/20172414" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Politique de confidentialité ">Politique de confidentialité</a>
+            <script type="text/javascript">
+                (function(w, d) {
+                    var loader = function() {
+                        var s = d.createElement("script"),
+                            tag = d.getElementsByTagName("script")[0];
+                        s.src = "https://cdn.iubenda.com/iubenda.js";
+                        tag.parentNode.insertBefore(s, tag);
+                    };
+                    if (w.addEventListener) {
+                        w.addEventListener("load", loader, false);
+                    } else if (w.attachEvent) {
+                        w.attachEvent("onload", loader);
+                    } else {
+                        w.onload = loader;
+                    }
+                })(window, document);
+            </script>
+        </div>
+
     </footer>
 
     <!-- Custom JS file link -->
 
-    <script src="frontend/script.js"></script> <!-- Ajustez le chemin si nécessaire -->
+    <script src="frontend/script/script.js"></script> <!-- Ajustez le chemin si nécessaire -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Si vous utilisez Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 </body>

@@ -33,6 +33,8 @@
 * {
     font-family: "Montserrat Alternates", sans-serif;
 }
+/*******************************************************/
+/****************General styles*************************/
 
 h1,
 h2,
@@ -51,14 +53,26 @@ header{
 .title.is-1,
 .title.is-2,
 .title.is-3,
-.title.is-4 {
+.title.is-4,
+.label {
     color: hsl(221deg, 14%, 21%);
+}
+
+.input,
+.textarea {
+    background-color: hsl(221deg, 14%, 100%);
+    color: hsl(221deg, 14%, 21%);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+    color: hsl(221deg, 14%, 70%);
+    /* Ajustez cette couleur selon vos besoins */
 }
 
 .navbar-item{
     color: hsl(221deg, 14%, 29%);
     border-radius: 1rem;
-
 }
 
 a.navbar-item:hover{
@@ -72,7 +86,9 @@ a.navbar-item:hover{
 .navbar {
     background: var(--light-gradient);
     --bulma-navbar-item-img-max-height: 95px;
+    background-color: hsl(221deg, 14%, 100%);
 }
+
 #tsparticles {
     position: fixed;
     top: 0;
@@ -80,13 +96,11 @@ a.navbar-item:hover{
     width: 100%;
     height: 100%;
     z-index: -1;
-    /* Assurez-vous que les particules sont derrière le contenu principal */
 }
 
 .container {
     position: relative;
     z-index: 1;
-    /* Assurez-vous que le contenu principal est au-dessus des particules */
 }
 .section {
     --bulma-section-padding-desktop: 2rem 3rem 1rem;
@@ -104,369 +118,6 @@ a.navbar-item:hover{
     display: block;
 }
 
-/* Zone cliquable home porte*/
-.door-clickable-area {
-    position: absolute;
-    left: 45%;
-    top: 57.5%;
-    width: 10%;
-    height: 21.5%;
-    border-radius: 30%;
-    z-index: 10;
-    cursor: pointer;
-}
-
-/* Effet halo home porte*/
-.door-hover-effect {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 40px;
-    box-shadow: 0 0 20px 10px rgba(248, 248, 248, 0.4);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    z-index: -1;
-}
-
-.door-clickable-area:hover .door-hover-effect {
-    opacity: 1;
-}
-
-/* Images des portes */
-.door-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: none;
-}
-
-/* Affiche la porte correcte uniquement au survol */
-.door-clickable-area:hover .door-day.active,
-.door-clickable-area:hover .door-night.active {
-    display: block;
-    /* Porte de jour ou de nuit au survol */
-}
-
-
-.random-facts {
-    width: 70%;
-    height: 18em;
-    margin: 2rem auto;
-    padding: 1.5rem;
-    text-align: center;
-    border-radius: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.random-facts p {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.random-facts p.active {
-    opacity: 1;
-}
-
-.fact-emoji {
-    font-size: 2rem;
-}
-
-.whoAmI {
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-}
-
-#pie{
-    height: 500px;
-    width: 500px;
-}
-/* GIF de flamme */
-.flame-gif {
-    position: absolute;
-    top: 73%;
-    /* Ajuster selon la position souhaitée */
-    left: 16%;
-    /* Ajuster selon la position souhaitée */
-    transform: translate(-50%, -50%);
-    /* Centrer le GIF */
-    width: 25%;
-    /* Ajuster la taille selon vos besoins */
-    height: 15%;
-    z-index: 10;
-    /* Assurez-vous que le GIF est au-dessus de l'illustration */
-}
-
-.kirby-gif {
-    position: absolute;
-    top: 56.8%;
-    /* Ajuster selon la position souhaitée */
-    left: 50%;
-    /* Ajuster selon la position souhaitée */
-    transform: translate(50%, -50%) rotate(20deg);
-    /* Centrer le GIF */
-    width: 12%;
-    /* Ajuster la taille selon vos besoins */
-    height: 9%;
-    z-index: -1;
-    /* Assurez-vous que le GIF est au-dessus de l'illustration */
-}
-
-.rain-night-gif {
-    position: absolute;
-    top: 33%;
-    /* Ajuster selon la position souhaitée */
-    left: 32%;
-    /* Ajuster selon la position souhaitée */
-    transform: translate(-50%, -50%);
-    /* Centrer le GIF */
-    width: 15%;
-    /* Ajuster la taille selon vos besoins */
-    height: 36.2%;
-    z-index: -1;
-  
-}
-.rain-day-gif {
-    position: absolute;
-    top: 33%;
-    /* Ajuster selon la position souhaitée */
-    left: 30%;
-    /* Ajuster selon la position souhaitée */
-    transform: translate(-50%, -50%);
-    /* Centrer le GIF */
-    width: 15%;
-    /* Ajuster la taille selon vos besoins */
-    height: 36.2%;
-    z-index: -1;
- 
-}
-/* Zone cliquable about chair */
-.chair-clickable-area {
-    position: absolute;
-    left: 28%;
-    top: 49.5%;
-    width: 23%;
-    height: 34%;
-    z-index: 10;
-    cursor: pointer;
-}
-/* Effet halo about chair */
-.chair-hover-effect {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 40px;
-    box-shadow: 0 0 20px 10px rgba(248, 248, 248, 0.3);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    z-index: -1;
-}
-
-.chair-clickable-area:hover .chair-hover-effect {
-    opacity: 1;
-}
-
-/* Images des fauteils */
-.chair-image {
-    position: absolute;
-    top: 0;
-    left: -2%;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: none;
-}
-
-/* Affiche le fauteuil correcte uniquement au survol */
-.chair-clickable-area:hover .chair-day.active,
-.chair-clickable-area:hover .chair-night.active {
-    display: block;
-    /* fauteuils de jour ou de nuit au survol */
-}
-
-.tv-clickable-area {
-    position: absolute;
-    left: 55.5%;
-    top: 47%;
-    width: 15%;
-    height: 20%;
-    z-index: 10;
-    cursor: pointer;
-}
-
-.tv-hover-effect {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 40px;
-    box-shadow: 0 0 20px 10px rgba(248, 248, 248, 0.3);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    z-index: -1;
-}
-
-.tv-clickable-area:hover .tv-hover-effect {
-    opacity: 1;
-}
-/* Images des tv */
-.tv-image {
-    position: absolute;
-    top: 2%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: none;
-    z-index: 11;
-    /* Assurez-vous que l'image de la TV a un z-index supérieur */
-}
-
-/* Affiche la tv correcte uniquement au survol */
-.tv-clickable-area:hover .tv-day.active,
-.tv-clickable-area:hover .tv-night.active {
-    display: block;
-    /* tv de jour ou de nuit au survol */
-}
-
-/* Zone cliquable about library */
-.library-clickable-area {
-    position: absolute;
-    left: 71%;
-    top: 22%;
-    width: 22%;
-    height: 71%;
-    z-index: 10;
-    cursor: pointer;
-}
-/* Effet halo about library*/
-.library-hover-effect {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 40px;
-    box-shadow: 0 0 20px 10px rgba(248, 248, 248, 0.3);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    z-index: -1;
-}
-
-.library-clickable-area:hover .library-hover-effect {
-    opacity: 1;
-}
-
-/* Images des bibliothèques*/
-.library-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: none;
-}
-
-/* Affiche la bibliothèque correcte uniquement au survol */
-.library-clickable-area:hover .library-day.active,
-.library-clickable-area:hover .library-night.active {
-    display: block;
-    /* Bibliothèque de jour ou de nuit au survol */
-}
-
-.projects-title {
-    padding: 1em;
-    color: hsl(221deg, 14%, 21%);
-}
-
-.project-illustration-section {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.project-illustration-section img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 3em;
-}
-
-.project-gallery {
-    position: absolute;
-    top: 48%;
-    left: 50.3%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    width: 80%;
-    gap: 15px;
-}
-
-.project-card {
-    min-width: 50px;
-    height: 200px;
-    margin: 0;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card h1.project-title {
-    font-size: 1.2rem;
-    margin: 0;
-    pointer-events: none;
-}
-
-
-.modal-card-title{
-    color: hsl(221deg, 14%, 21%);
-}
-
-#modal-badges{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.modal-link{
-    display: flex;
-    justify-content: center;
-    gap: 1em;
-}
-
-.modal-card-body{
-    overflow: hidden;
-}
-
-.modal-card-head,
-.modal-card-body,
-.modal-card-foot {
-    background-color: hsl(221deg, 14%, 100%);
-    padding: 0.8rem;
-}
-
-.modal-card-foot{
-    display: flex;
-    justify-content: space-between;
-}
-
 footer {
     background: var(--light-gradient);
 }
@@ -479,6 +130,18 @@ footer {
 
 footer .follow {
     font-size: 2.5rem;
+}
+
+footer .lang {
+    color:var(--bulma-link-text);
+    font-size: 0.8rem;
+}
+
+.legal{
+    display: flex;
+    justify-content: space-around;
+    color: var(--bulma-link-text);
+    font-size: 0.8rem;
 }
 
 .toggle-switch {
@@ -556,6 +219,422 @@ footer .follow {
 .toggle-switch input:checked+.slider .fa-moon {
     opacity: 0;
 }
+/*******************************************************/
+/****************Home page*****************************/
+
+/* door clickable area */
+.door-clickable-area {
+    position: absolute;
+    left: 45%;
+    top: 57.5%;
+    width: 10%;
+    height: 21.5%;
+    border-radius: 30%;
+    z-index: 10;
+    cursor: pointer;
+}
+
+/* halo effect for door */
+.door-hover-effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 40px;
+    box-shadow: 0 0 20px 10px rgba(248, 248, 248, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.door-clickable-area:hover .door-hover-effect {
+    opacity: 1;
+}
+.smoke-gif {
+    position: absolute;
+    top: -5.3%;
+    left: 32%;
+    width: 10%;
+    z-index: 10;
+}
+/* door images */
+.door-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+/* display the correct door image on hover */
+.door-clickable-area:hover .door-day.active,
+.door-clickable-area:hover .door-night.active {
+    display: block;
+}
+
+#KnowMe{
+    margin-top: 0;
+}
+
+/*******************************************************/
+/****************About page****************************/
+.random-facts {
+    width: 70%;
+    height: 18em;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.random-facts p {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.random-facts p.active {
+    opacity: 1;
+}
+
+.fact-emoji {
+    font-size: 2rem;
+}
+
+.whoAmI {
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+#pie{
+    height: 500px;
+    width: 500px;
+}
+
+.flame-gif {
+    position: absolute;
+    top: 73%;
+    left: 16%;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    height: 15%;
+    z-index: 10;
+}
+
+.cat-gif {
+    position: absolute;
+    top: 59%;
+    left: 31%;
+    width: 12.5%;
+    z-index: 10;
+}
+
+.kirby-gif {
+    position: absolute;
+    top: 56.8%;
+    left: 50%;
+    transform: translate(50%, -50%) rotate(20deg);
+    width: 12%;
+    height: 9%;
+    z-index: -1;
+}
+
+.rain-night-gif {
+    position: absolute;
+    top: 33%;
+    left: 32%;
+    transform: translate(-50%, -50%);
+    width: 15%;
+    height: 36.2%;
+    z-index: -1;
+  
+}
+.rain-day-gif {
+    position: absolute;
+    top: 33%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    width: 15%;
+    height: 36.2%;
+    z-index: -1;
+}
+.chocolate-night-gif {
+    position: absolute;
+    top: 58%;
+    left: 51.3%;
+    transform: translate(-50%, -50%);
+    height: 15%;
+    z-index: 1;
+}
+
+.chocolate-day-gif {
+    position: absolute;
+    top: 58%;
+    left: 51.3%;
+    transform: translate(-50%, -50%);
+    height: 15%;
+    z-index: 1;
+}
+
+.chair-clickable-area {
+    position: absolute;
+    left: 28%;
+    top: 49.5%;
+    width: 23%;
+    height: 34%;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.chair-hover-effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    box-shadow: 0 0 20px 10px rgba(248, 248, 248, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.chair-clickable-area:hover .chair-hover-effect {
+    opacity: 1;
+}
+
+.chair-image {
+    position: absolute;
+    top: 0;
+    left: -2%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+}
+
+.chair-clickable-area:hover .chair-day.active,
+.chair-clickable-area:hover .chair-night.active {
+    display: block;
+}
+
+.tv-clickable-area {
+    position: absolute;
+    left: 55.5%;
+    top: 47%;
+    width: 15%;
+    height: 20%;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.tv-hover-effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    box-shadow: 0 0 20px 10px rgba(248, 248, 248, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.tv-clickable-area:hover .tv-hover-effect {
+    opacity: 1;
+}
+
+.tv-image {
+    position: absolute;
+    top: 2%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+    z-index: 11;
+}
+
+
+.tv-clickable-area:hover .tv-day.active,
+.tv-clickable-area:hover .tv-night.active {
+    display: block;
+}
+
+
+.library-clickable-area {
+    position: absolute;
+    left: 71%;
+    top: 22%;
+    width: 22%;
+    height: 71%;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.library-hover-effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    box-shadow: 0 0 20px 10px rgba(248, 248, 248, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.library-clickable-area:hover .library-hover-effect {
+    opacity: 1;
+}
+
+.library-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+}
+
+.library-clickable-area:hover .library-day.active,
+.library-clickable-area:hover .library-night.active {
+    display: block;
+}
+/*******************************************************/
+/****************Projects page*************************/
+
+.projects-title {
+    padding: 1em;
+    color: hsl(221deg, 14%, 21%);
+}
+
+.project-illustration-section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.project-illustration-section img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 3em;
+}
+
+.project-gallery {
+    position: absolute;
+    top: 48%;
+    left: 50.3%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    gap: 15px;
+}
+
+.project-card {
+    min-width: 50px;
+    height: 200px;
+    margin: 0;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card h1.project-title {
+    font-size: 1.2rem;
+    margin: 0;
+    pointer-events: none;
+}
+
+.modal-card-title{
+    color: hsl(221deg, 14%, 21%);
+}
+
+#modal-badges{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.modal-link{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.modal-card-body{
+    overflow: hidden;
+}
+
+.modal-card-head,
+.modal-card-body,
+.modal-card-foot {
+    background-color: hsl(221deg, 14%, 100%);
+    padding: 0.8rem;
+}
+
+.modal-card-foot{
+    display: flex;
+    justify-content: space-between;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+    width: 120px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip-left .tooltiptext {
+    right: 125%;
+    /* Position the tooltip to the left of the text */
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 6px;
+}
+
+.tooltip-right .tooltiptext {
+    left: 125%;
+    /* Position the tooltip to the right of the text */
+    top: 50%;
+    transform: translateY(-50%);
+}
+/*******************************************************/
+/****************Dark mode*****************************/
 
 body.dark-mode {
     color: var(--dark-text);
@@ -654,6 +733,7 @@ body.dark-mode .title.is-2,
 body.dark-mode .title.is-3,
 body.dark-mode .title.is-4,
 body.dark-mode footer,
+body.dark-mode .legal,
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode p,
@@ -707,7 +787,6 @@ body.dark-mode a {
 
     .navbar-brand img {
         max-height: 100px;
-        /* Réduire la taille du logo en version mobile */
     }
 
     .toggle-switch {
@@ -742,7 +821,6 @@ body.dark-mode a {
         right: 0;
         background: var(--light-gradient);
         display: none;
-        /* Masquer le menu par défaut */
     }
     
     body.dark-mode .navbar-menu {
@@ -751,13 +829,11 @@ body.dark-mode a {
     
     .navbar-menu.is-active {
         display: block;
-        /* Afficher le menu lorsqu'il est actif */
     }
     
     .navbar-burger {
         display: block;
         order: 2;
-     /* Assurez-vous que le burger est à droite */
      }
     
     .navbar-end {
@@ -844,6 +920,10 @@ body.dark-mode a {
     footer .follow {
         font-size: 1.8rem;
     }
+
+    .legal{
+        flex-direction: column;
+    }
     .content h1{
         font-size: 1.8rem;
     }
@@ -902,7 +982,6 @@ body.dark-mode a {
         min-width: 35px;
     }
 
-
 }
 @media (max-width: 460px) {
   
@@ -920,12 +999,10 @@ body.dark-mode a {
     .project-card {
         min-width: 28px;
     }
-
 }
 @media (max-width: 396px) {
 
     .project-card {
         min-width: 26px;
     }
-
 }

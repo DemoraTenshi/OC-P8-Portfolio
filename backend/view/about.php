@@ -7,13 +7,13 @@ $title = "About";
 
 <div class="content container">
     <section class="section">
-        <h2 class="title is-3"><?php echo $recipe_title; ?></h2>
+        <h2 class="title is-3" id="recipe-title"><?php echo $recipe_title; ?></h2>
         <p class="recipe-text"><?php echo $recipe_paragraphe; ?></p>
         <div class="whoAmI" id="recipe" style="display: none;">
             <div class="chart-container" id="pie" style="position: relative;">
                 <canvas id="pieChart"></canvas>
             </div>
-            <div class="receipe-container">
+            <div class="recipe-container">
                 <ul>
                     <li><?php echo $instructions; ?></li>
                     <ul>
@@ -53,11 +53,15 @@ $title = "About";
         </div>
     </section>
     <section class="section">
-        <h2 class="title is-3"><?php echo $skills; ?></h2>
+        <h2 class="title is-3" id="bar-chart-title"><?php echo $skills; ?></h2>
         <p class="skills-text"><?php echo $skills_2; ?></p>
         <div class="chart-container" id="bar-chart" style="position: relative; height:50vh; display:none;">
             <canvas id="barChart"></canvas>
         </div>
+    </section>
+    <section class="section">
+        <h2 class="title is-3"><?php echo $my_work; ?></h2>
+        <p><?php echo $my_work_1; ?></p>
     </section>
     <section>
         <div class="illustration-section" id="illustration-wrapper">
@@ -71,12 +75,18 @@ $title = "About";
             </picture>
             <!--gif fireplace-->
             <img src="frontend/assets/images/flamme.gif" alt="flamme" class="flame-gif" style="display: none;">
+            <!--gif breathing cat-->
+            <img src="frontend/assets/images/chat.gif" alt="chat" class="cat-gif" style="display: none;">
             <!--gif kirby-->
             <img src="frontend/assets/images/kirby.gif" alt="kirby" class="kirby-gif" style="display: none;">
             <!--gif rain day-->
             <img src="frontend/assets/images/pluie_jour.gif" alt="rain day" class="rain-day-gif" style="display: none;">
             <!--gif rain night-->
             <img src="frontend/assets/images/pluie_nuit.gif" alt="rain night" class="rain-night-gif" style="display: none;">
+            <!--gif hot chocolate night-->
+            <img src="frontend/assets/images/vapeur.gif" alt="vapeur" class="chocolate-night-gif" style="display: none;">
+            <!--gif hot chocolate day-->
+            <img src="frontend/assets/images/vapeur-jour.gif" alt="vapeur" class="chocolate-day-gif" style="display: none;">
             <!-- zone cliquable recipe-->
             <a href="#recipe" class="chair-clickable-area" aria-label="Accéder à la page Projets">
                 <span class="chair-hover-effect"></span>
@@ -104,10 +114,7 @@ $title = "About";
         <p><?php echo $about_description_1; ?></p>
         <p><?php echo $about_description_2; ?></p>
     </section>
-    <section class="section">
-        <h2 class="title is-3"><?php echo $my_work; ?></h2>
-        <p><?php echo $my_work_1; ?></p>
-    </section>
+
 </div>
 
 <?php

@@ -27,6 +27,8 @@
             <picture class="dark-mode-picture" style="display: none;">
                 <img src="frontend/assets/images/Maison_Exterieur_nuit.webp" alt="Illustration de nuit">
             </picture>
+            <!--gif smoke-->
+            <img src="frontend/assets/images/Pouf_de_Fumee.gif" alt="smoke" class="smoke-gif" style="display: none;">
 
             <!-- Zone cliquable -->
             <a href="index.php?page=about" class="door-clickable-area" aria-label="Accéder à la page À propos">
@@ -39,7 +41,7 @@
 
 
 
-        <h2 class="title is-2"><?php echo $knowMe; ?></h2>
+        <h2 class="title is-2" id="KnowMe"><?php echo $knowMe; ?></h2>
         <p><?php echo $door; ?></p>
     </section>
 </div>

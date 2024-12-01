@@ -36,7 +36,7 @@
                     </div>
                 <?php endforeach; ?>
             <?php else : ?>
-                <p>Aucun projet disponible pour le moment.</p>
+                <p>No project available at the moment.</p>
             <?php endif; ?>
         </div>
     </div>
@@ -46,11 +46,11 @@
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title" id="modal-title">Titre du projet</p>
+                <p class="modal-card-title" id="modal-title"><?php echo $translations['modal-title']; ?></p>
                 <button class="delete" aria-label="close"></button>
             </header>
             <section class="modal-card-body">
-                <p id="modal-description">Description du projet</p>
+                <p id="modal-description"><?php echo $translations['modal-desription']; ?></p>
                 <div id="modal-badges"></div>
             </section>
             <section class="modal-card-body">
@@ -58,12 +58,18 @@
             </section>
             <section class="modal-card-body">
                 <div class="modal-link">
-                    <a id="modal-github" href="#" target="_blank">
-                        <i class="fa-solid fa-code"></i>
-                    </a>
-                    <a id="modal-deployment" href="#" target="_blank">
-                        <i class="fa-solid fa-desktop"></i>
-                    </a>
+                    <div class="tooltip tooltip-left">
+                        <a id="modal-github" href="#" target="_blank">
+                            <i class="fa-solid fa-code"></i>
+                        </a>
+                        <span class="tooltiptext"><?php echo $translations['github']; ?></span>
+                    </div>
+                    <div class="tooltip tooltip-right">
+                        <a id="modal-deployment" href="#" target="_blank">
+                            <i class="fa-solid fa-desktop"></i>
+                        </a>
+                        <span class="tooltiptext"><?php echo $translations['deployment']; ?></span>
+                    </div>
                 </div>
             </section>
             <footer class="modal-card-foot">

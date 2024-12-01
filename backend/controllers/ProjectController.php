@@ -20,6 +20,11 @@ class ProjectController
     {
         // Titre de la page
         $title = $this->translations['layout']['Projects'];
+        $work = $this->translations['projects']['work'];
+        $github = $this->translations['projects']['github'];
+        $deployment = $this->translations['projects']['deployment'];
+        $modal_title = $this->translations['projects']['modal-title'];
+        $modal_description = $this->translations['projects']['modal-description'];
 
         // Récupère les projets GitHub
         $githubProjects = $this->projectModel->getGithubProjects();

@@ -4,7 +4,8 @@ return [
         'home' => 'Home',
         'about' => 'About',
         'Projects' => 'Projects',
-        'Contact' => 'Contact'
+        'Contact' => 'Contact',
+        'Language' => 'Vous voulez voir ce site en français ? Changez la langue de votre navigateur en français.',
     ],
 
     'home' => [
@@ -71,5 +72,9 @@ return [
 
     'projects' => [
         'work' => 'My work',
+        'github' => 'GitHub Repo',
+        'deployment' => 'Deployment',
+        'modal-title' => 'Project\'s title',
+        'modal-description' => 'Project\'s description'
     ],
 ];

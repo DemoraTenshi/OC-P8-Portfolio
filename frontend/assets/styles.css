@@ -21582,6 +21582,8 @@ has-background-danger.is-hoverable:active {
   font-family: "Montserrat Alternates", sans-serif;
 }
 
+/*******************************************************/
+/****************General styles*************************/
 h1,
 h2,
 li,
@@ -21598,8 +21600,21 @@ header {
 .title.is-1,
 .title.is-2,
 .title.is-3,
-.title.is-4 {
+.title.is-4,
+.label {
   color: hsl(221, 14%, 21%);
+}
+
+.input,
+.textarea {
+  background-color: hsl(221, 14%, 100%);
+  color: hsl(221, 14%, 21%);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: hsl(221, 14%, 70%);
+  /* Ajustez cette couleur selon vos besoins */
 }
 
 .navbar-item {
@@ -21618,6 +21633,7 @@ a.navbar-item:hover {
 .navbar {
   background: var(--light-gradient);
   --bulma-navbar-item-img-max-height: 95px;
+  background-color: hsl(221, 14%, 100%);
 }
 
 #tsparticles {
@@ -21627,13 +21643,11 @@ a.navbar-item:hover {
   width: 100%;
   height: 100%;
   z-index: -1;
-  /* Assurez-vous que les particules sont derrière le contenu principal */
 }
 
 .container {
   position: relative;
   z-index: 1;
-  /* Assurez-vous que le contenu principal est au-dessus des particules */
 }
 
 .section {
@@ -21653,7 +21667,111 @@ a.navbar-item:hover {
   display: block;
 }
 
-/* Zone cliquable home porte*/
+footer {
+  background: var(--light-gradient);
+}
+
+.footer {
+  background: var(--light-gradient);
+  --bulma-footer-padding: 3rem 1.5rem;
+  margin-top: 130px;
+}
+
+footer .follow {
+  font-size: 2.5rem;
+}
+
+footer .lang {
+  color: var(--bulma-link-text);
+  font-size: 0.8rem;
+}
+
+.legal {
+  display: flex;
+  justify-content: space-around;
+  color: var(--bulma-link-text);
+  font-size: 0.8rem;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 110px;
+  height: 50px;
+  display: inline-block;
+  order: 2;
+}
+
+.toggle-switch input[type=checkbox] {
+  opacity: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #555;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.slider i {
+  font-size: 2rem;
+  color: white;
+  transition: opacity 0.3s ease;
+}
+
+.slider .fa-sun {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.slider .fa-moon {
+  opacity: 1;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 44px;
+  width: 44px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch input:checked + .slider {
+  background-color: #333;
+  padding: 0 1rem;
+}
+
+.toggle-switch input:checked + .slider:before {
+  transform: translateX(58px);
+}
+
+.toggle-switch input:checked + .slider .fa-sun {
+  opacity: 1;
+}
+
+.toggle-switch input:checked + .slider .fa-moon {
+  opacity: 0;
+}
+
+/*******************************************************/
+/****************Home page*****************************/
+/* door clickable area */
 .door-clickable-area {
   position: absolute;
   left: 45%;
@@ -21665,7 +21783,7 @@ a.navbar-item:hover {
   cursor: pointer;
 }
 
-/* Effet halo home porte*/
+/* halo effect for door */
 .door-hover-effect {
   position: absolute;
   width: 100%;
@@ -21683,7 +21801,15 @@ a.navbar-item:hover {
   opacity: 1;
 }
 
-/* Images des portes */
+.smoke-gif {
+  position: absolute;
+  top: -5.3%;
+  left: 32%;
+  width: 10%;
+  z-index: 10;
+}
+
+/* door images */
 .door-image {
   position: absolute;
   top: 0;
@@ -21694,13 +21820,18 @@ a.navbar-item:hover {
   display: none;
 }
 
-/* Affiche la porte correcte uniquement au survol */
+/* display the correct door image on hover */
 .door-clickable-area:hover .door-day.active,
 .door-clickable-area:hover .door-night.active {
   display: block;
-  /* Porte de jour ou de nuit au survol */
 }
 
+#KnowMe {
+  margin-top: 0;
+}
+
+/*******************************************************/
+/****************About page****************************/
 .random-facts {
   width: 70%;
   height: 18em;
@@ -21737,47 +21868,40 @@ a.navbar-item:hover {
   width: 500px;
 }
 
-/* GIF de flamme */
 .flame-gif {
   position: absolute;
   top: 73%;
-  /* Ajuster selon la position souhaitée */
   left: 16%;
-  /* Ajuster selon la position souhaitée */
   transform: translate(-50%, -50%);
-  /* Centrer le GIF */
   width: 25%;
-  /* Ajuster la taille selon vos besoins */
   height: 15%;
   z-index: 10;
-  /* Assurez-vous que le GIF est au-dessus de l'illustration */
+}
+
+.cat-gif {
+  position: absolute;
+  top: 59%;
+  left: 31%;
+  width: 12.5%;
+  z-index: 10;
 }
 
 .kirby-gif {
   position: absolute;
   top: 56.8%;
-  /* Ajuster selon la position souhaitée */
   left: 50%;
-  /* Ajuster selon la position souhaitée */
   transform: translate(50%, -50%) rotate(20deg);
-  /* Centrer le GIF */
   width: 12%;
-  /* Ajuster la taille selon vos besoins */
   height: 9%;
   z-index: -1;
-  /* Assurez-vous que le GIF est au-dessus de l'illustration */
 }
 
 .rain-night-gif {
   position: absolute;
   top: 33%;
-  /* Ajuster selon la position souhaitée */
   left: 32%;
-  /* Ajuster selon la position souhaitée */
   transform: translate(-50%, -50%);
-  /* Centrer le GIF */
   width: 15%;
-  /* Ajuster la taille selon vos besoins */
   height: 36.2%;
   z-index: -1;
 }
@@ -21785,18 +21909,31 @@ a.navbar-item:hover {
 .rain-day-gif {
   position: absolute;
   top: 33%;
-  /* Ajuster selon la position souhaitée */
   left: 30%;
-  /* Ajuster selon la position souhaitée */
   transform: translate(-50%, -50%);
-  /* Centrer le GIF */
   width: 15%;
-  /* Ajuster la taille selon vos besoins */
   height: 36.2%;
   z-index: -1;
 }
 
-/* Zone cliquable about chair */
+.chocolate-night-gif {
+  position: absolute;
+  top: 58%;
+  left: 51.3%;
+  transform: translate(-50%, -50%);
+  height: 15%;
+  z-index: 1;
+}
+
+.chocolate-day-gif {
+  position: absolute;
+  top: 58%;
+  left: 51.3%;
+  transform: translate(-50%, -50%);
+  height: 15%;
+  z-index: 1;
+}
+
 .chair-clickable-area {
   position: absolute;
   left: 28%;
@@ -21807,7 +21944,6 @@ a.navbar-item:hover {
   cursor: pointer;
 }
 
-/* Effet halo about chair */
 .chair-hover-effect {
   position: absolute;
   width: 100%;
@@ -21825,7 +21961,6 @@ a.navbar-item:hover {
   opacity: 1;
 }
 
-/* Images des fauteils */
 .chair-image {
   position: absolute;
   top: 0;
@@ -21836,11 +21971,9 @@ a.navbar-item:hover {
   display: none;
 }
 
-/* Affiche le fauteuil correcte uniquement au survol */
 .chair-clickable-area:hover .chair-day.active,
 .chair-clickable-area:hover .chair-night.active {
   display: block;
-  /* fauteuils de jour ou de nuit au survol */
 }
 
 .tv-clickable-area {
@@ -21870,7 +22003,6 @@ a.navbar-item:hover {
   opacity: 1;
 }
 
-/* Images des tv */
 .tv-image {
   position: absolute;
   top: 2%;
@@ -21880,17 +22012,13 @@ a.navbar-item:hover {
   object-fit: contain;
   display: none;
   z-index: 11;
-  /* Assurez-vous que l'image de la TV a un z-index supérieur */
 }
 
-/* Affiche la tv correcte uniquement au survol */
 .tv-clickable-area:hover .tv-day.active,
 .tv-clickable-area:hover .tv-night.active {
   display: block;
-  /* tv de jour ou de nuit au survol */
 }
 
-/* Zone cliquable about library */
 .library-clickable-area {
   position: absolute;
   left: 71%;
@@ -21901,7 +22029,6 @@ a.navbar-item:hover {
   cursor: pointer;
 }
 
-/* Effet halo about library*/
 .library-hover-effect {
   position: absolute;
   width: 100%;
@@ -21919,7 +22046,6 @@ a.navbar-item:hover {
   opacity: 1;
 }
 
-/* Images des bibliothèques*/
 .library-image {
   position: absolute;
   top: 0;
@@ -21930,13 +22056,13 @@ a.navbar-item:hover {
   display: none;
 }
 
-/* Affiche la bibliothèque correcte uniquement au survol */
 .library-clickable-area:hover .library-day.active,
 .library-clickable-area:hover .library-night.active {
   display: block;
-  /* Bibliothèque de jour ou de nuit au survol */
 }
 
+/*******************************************************/
+/****************Projects page*************************/
 .projects-title {
   padding: 1em;
   color: hsl(221, 14%, 21%);
@@ -22018,96 +22144,48 @@ a.navbar-item:hover {
   justify-content: space-between;
 }
 
-footer {
-  background: var(--light-gradient);
-}
-
-.footer {
-  background: var(--light-gradient);
-  --bulma-footer-padding: 3rem 1.5rem;
-  margin-top: 130px;
-}
-
-footer .follow {
-  font-size: 2.5rem;
-}
-
-.toggle-switch {
+.tooltip {
   position: relative;
-  width: 110px;
-  height: 50px;
   display: inline-block;
-  order: 2;
-}
-
-.toggle-switch input[type=checkbox] {
-  opacity: 0;
-  position: absolute;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #555;
-  border-radius: 50px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 1rem;
-  transition: background-color 0.3s ease;
 }
 
-.slider i {
-  font-size: 2rem;
-  color: white;
-  transition: opacity 0.3s ease;
-}
-
-.slider .fa-sun {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.slider .fa-moon {
-  opacity: 1;
-}
-
-.slider:before {
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
   position: absolute;
-  content: "";
-  height: 44px;
-  width: 44px;
-  left: 3px;
-  bottom: 3px;
-  background-color: white;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+  width: 120px;
 }
 
-.toggle-switch input:checked + .slider {
-  background-color: #333;
-  padding: 0 1rem;
-}
-
-.toggle-switch input:checked + .slider:before {
-  transform: translateX(58px);
-}
-
-.toggle-switch input:checked + .slider .fa-sun {
+.tooltip:hover .tooltiptext {
+  visibility: visible;
   opacity: 1;
 }
 
-.toggle-switch input:checked + .slider .fa-moon {
-  opacity: 0;
+.tooltip-left .tooltiptext {
+  right: 125%;
+  /* Position the tooltip to the left of the text */
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 6px;
 }
 
+.tooltip-right .tooltiptext {
+  left: 125%;
+  /* Position the tooltip to the right of the text */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/*******************************************************/
+/****************Dark mode*****************************/
 body.dark-mode {
   color: var(--dark-text);
 }
@@ -22205,6 +22283,7 @@ body.dark-mode .title.is-2,
 body.dark-mode .title.is-3,
 body.dark-mode .title.is-4,
 body.dark-mode footer,
+body.dark-mode .legal,
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode p,
@@ -22249,7 +22328,6 @@ body.dark-mode a {
   }
   .navbar-brand img {
     max-height: 100px;
-    /* Réduire la taille du logo en version mobile */
   }
   .toggle-switch {
     width: 80px;
@@ -22278,19 +22356,16 @@ body.dark-mode a {
     right: 0;
     background: var(--light-gradient);
     display: none;
-    /* Masquer le menu par défaut */
   }
   body.dark-mode .navbar-menu {
     background: var(--dark-gradient);
   }
   .navbar-menu.is-active {
     display: block;
-    /* Afficher le menu lorsqu'il est actif */
   }
   .navbar-burger {
     display: block;
     order: 2;
-    /* Assurez-vous que le burger est à droite */
   }
   .navbar-end {
     display: flex;
@@ -22360,6 +22435,9 @@ body.dark-mode a {
   }
   footer .follow {
     font-size: 1.8rem;
+  }
+  .legal {
+    flex-direction: column;
   }
   .content h1 {
     font-size: 1.8rem;

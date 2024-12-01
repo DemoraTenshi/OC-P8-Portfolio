@@ -4,20 +4,21 @@ return [
         'home' => 'Accueil',
         'about' => 'À propos',
         'Projects' => 'Projets',
-        'Contact' => 'Contact'
+        'Contact' => 'Contact',
+        'Language' => 'Want to see this site in English ? Change you browser language to English.',
     ],
 
     'home' => [
         'title' => 'Bienvenue sur mon portfolio !',
         'description' => 'Salut ! Je suis Cécile, développeuse web passionnée, joueuse invétérée et lectrice compulsive, basée en France. Entre quêtes virtuelles et piles de livres, je transforme des lignes de code en expériences web fluides et innovantes. Plongez dans mon univers et découvrez comment je combine créativité et rigueur pour donner vie à vos projets !',
         'random_facts' => 'Faits aléatoires',
-        'want_to_know_me' => 'Vous voulez me connaître moi et mon travail ?',
+        'want_to_know_me' => 'Voulez-vous nous connaître mon travail et moi ?',
         'open_the_door' => 'Ouvrez la porte et entrez !'
     ],
 
     'about' => [
         'about_me' => 'À propos de moi',
-        'about_description_1' => ' « La vie est trop courte pour compter les heures supp », c\'est ce que je me suis dit après avoir passé 12 ans à gérer la paie dans un cabinet d\'expertise comptable. J\'ai toujours eu une passion pour l\'informatique, ce qui m\'a poussé à mettre la casquette de chef de projet numérique en plus de celle de spécialiste de la paie. Mais déployer des outils numériques pour mes clients et collègues, c\'était un peu comme donner des bonbons à des enfants : ça leur faisait plaisir, mais ça ne me suffisait pas.',
+        'about_description_1' => ' « La vie est trop courte pour compter les heures sup », c\'est ce que je me suis dit après avoir passé 12 ans à gérer la paie dans un cabinet d\'expertise comptable. J\'ai toujours eu une passion pour l\'informatique, ce qui m\'a poussé à mettre la casquette de chef de projet numérique en plus de celle de spécialiste de la paie. Mais déployer des outils numériques pour mes clients et collègues, c\'était un peu comme donner des bonbons à des enfants : ça leur faisait plaisir, mais ça ne me suffisait pas.',
         'about_description_2' => 'Alors, grâce à OpenClassrooms, je suis retournée à l\'école et je me suis recyclée dans le développement web. Et me voilà, 8 mois plus tard, à coder toutes sortes d\'applications pour mon plus grand bonheur. Mais ce n\'est pas tout ! Ma passion pour les arts me permet de coder la semaine et de chanter sur scène le week-end. Une vie bien remplie et pleine de créativité, voilà ce qui me fait vibrer ! Et qui a dit qu\'on ne pouvait pas être à la fois un geek et une rockstar ?',
         'recipe-title' => 'Recette pour une développeuse atypique',
         'recipe-paragraphe' => 'Prenez un siège!',
@@ -72,5 +73,9 @@ return [
 
     'projects' => [
         'work' => 'Mes projets',
+        'github' => 'Repo GitHub',
+        'deployment' => 'Déploiement',
+        'modal-title' => 'Titre du projet',
+        'modal-description' => 'Description du projet'
     ],
 ];
